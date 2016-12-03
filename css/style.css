@@ -129,6 +129,10 @@ h3, h4 {
   background-color: #ecf0f1;
 }
 
+.cert-badge {
+  margin-bottom: 20px;
+}
+
 #certs h1 {
   color: #2c3e50;
 }
