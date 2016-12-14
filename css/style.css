@@ -14,6 +14,14 @@ h1,h2 {
     text-align: center;
 }
 
+#contact-row a {
+    color: white;
+}
+
+#contact-row .col-md-4 {
+    margin-top: 20px;
+}
+
 h3, h4 {
   font-family: 'Raleway', sans-serif;
   color: #FFFFFF;
