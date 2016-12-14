@@ -10,9 +10,14 @@ h1,h2 {
   transition: 1000ms transform ease-in-out;
 }
 
+#contact {
+    text-align: center;
+}
+
 h3, h4 {
   font-family: 'Raleway', sans-serif;
   color: #FFFFFF;
+  text-align: center;
 }
 
 #footer h3 {
