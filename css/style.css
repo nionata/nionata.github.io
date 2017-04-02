@@ -6,6 +6,16 @@ h1,h2 {
   text-align: center;
 }
 
+#contact-a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+#projects-a {
+    color: #2ecc71;
+    text-decoration: none;
+}
+
 #nav {
   transition: 1000ms transform ease-in-out;
 }
