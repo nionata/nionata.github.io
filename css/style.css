@@ -114,12 +114,12 @@ h3, h4 {
 }
 
 #paragraph {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   color: #FFFFFF;
-  text-align: left;
+  text-align: justify;
   margin-top: 3%;
-  margin-bottom: 3%;
+  margin-bottom: 10%;
 }
 
 #projects {
@@ -149,7 +149,7 @@ h3, h4 {
 }
 
 .proj-desc {
-  padding: 2%;
+  padding: 0 2% 0 2%;
 }
 
 .proj-btn {
@@ -166,7 +166,7 @@ h3, h4 {
   margin-bottom: 20px;
 }
 
-#certs h1 {
+#certs h1, #projects h1, #contact h1 {
   color: #2c3e50;
 }
 
