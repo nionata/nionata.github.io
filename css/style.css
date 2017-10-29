@@ -105,6 +105,7 @@ h3, h4 {
     color: lightgray;
 }
 
+#experience h1,
 #projects h1,
 #contact h1,
 #footer h3,
@@ -122,6 +123,15 @@ h3, h4 {
   margin-bottom: 10%;
 }
 
+#experience {
+    background-color: #0097A7;
+    text-align: center;
+}
+
+#experience h3 {
+    color: #7f8c8d;
+}
+
 #projects {
   background-color: #2ecc71;
   color: #212121;
@@ -136,14 +146,25 @@ h3, h4 {
   background-color: #ecf0f1;
   box-shadow: 0px 13px 68px -5px rgba(0,0,0,0.75);
   margin: 20px 0px 20px 0px;
+  height: 75vh;
+}
+
+.experience {
+  background-color: #ecf0f1;
+  box-shadow: 0px 13px 68px -5px rgba(0,0,0,0.75);
+  margin: 20px 0px 20px 0px;
+  height: 85vh;
 }
 
 .project h1,
-.project h4 {
+.experience h1,
+.project h4,
+.experience h4 {
   color: #7f8c8d;
 }
 
-.project hr {
+.project hr,
+.experience hr {
   background-color: #7f8c8d;
   border-top: 1px solid #7f8c8d;
 }
@@ -166,7 +187,7 @@ h3, h4 {
   margin-bottom: 20px;
 }
 
-#certs h1, #projects h1, #contact h1 {
+#certs h1, #experience h1, #projects h1, #contact h1 {
   color: #2c3e50;
 }
 
