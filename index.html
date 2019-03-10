@@ -48,60 +48,26 @@
     <div class="container-fluid" id="experience">
         <h1><b><u>Experience</u></b></h1>
         <div class="row">
-            <div class="col-md-4 p">
-              <div class="experience">
-                  <img src="http://www.raymondjames.com/freestone/images/aboutus_banner.png" class="img-responsive">
-                  <h1>Raymond James Financial</h1>
-                  <h3>Software Developer Intern</h3>
-                  <h4>May 2018 - August 2018</h4>
-                  <br/>
-                  <div class="proj-desc">
-                      <h4>I am currently working on Enterprise Services.</h4>
-                      <hr/>
-                      <h4>Java - Spring - OracleDB</h4>
-                  </div>
-                  <hr/>
-                  <a href="https://www.raymondjames.com/" target="_blank">
-                      <button class="btn btn-primary proj-btn">Website</button>
-                  </a>
-              </div>
-            </div>
-            <div class="col-md-4 p">
-                <div class="experience">
-                    <img src="images/scanned.png" class="img-responsive">
-                    <h1>Scanned</h1>
-                    <h3>Co-Founder/Software Developer</h3>
-                    <h4>September 2016 - Current</h4>
-                    <br/>
-                    <div class="proj-desc">
-                        <h4>A startup I co-founded and work on as the tech lead. Through mobile and web apps we provide a highly efficient group attendance tracking service.</h4>
-                        <hr/>
-                        <h4>React.js - React Native - Firebase</h4>
-                    </div>
+          <div class="col-md-4 p" v-for="exp in experience">
+            <div class="experience">
+                <img v-bind:src="exp.image" class="img-responsive">
+                <h1>{{ exp.name }}</h1>
+                <h3>{{ exp.position }}</h3>
+                <h4>{{ exp.date.start }} - {{ exp.date.end }}</h4>
+                <br/>
+                <div class="proj-desc">
+                    <h4>{{ exp.description }}</h4>
                     <hr/>
-                    <a href="/Scanned-Website/" target="_blank">
-                        <button class="btn btn-primary proj-btn">Website</button>
-                    </a>
+                    <ul>
+                      <li v-for="tech in exp.technologies"><h5>{{ tech }}</h5></li>
+                    </ul>
                 </div>
+                <hr/>
+                <a v-bind:href="exp.links[0].link" target="_blank">
+                    <button class="btn btn-primary proj-btn">{{ exp.links[0].type }}</button>
+                </a>
             </div>
-            <div class="col-md-4 p">
-                <div class="experience">
-                    <img src="http://aeroengineer.org/wp-content/uploads/2016/11/LOCKHEED.png" class="img-responsive">
-                    <h1>Lockheed Martin</h1>
-                    <h3>Industrial Engineering Intern</h3>
-                    <h4>May 2017 - August 2017</h4>
-                    <br/>
-                    <div class="proj-desc">
-                        <h4>During my internship I did a lot of data analysis and reporting. Additionally, I created two tools in VBA that help with various processes.</h4>
-                        <hr/>
-                        <h4>VBA - Excel - Data Analysis</h4>
-                    </div>
-                    <hr/>
-                    <a href="https://www.lockheedmartin.com/us.html" target="_blank">
-                        <button class="btn btn-primary proj-btn">Website</button>
-                    </a>
-                </div>
-            </div>
+          </div>
         </div>
     </div>
     <div class="container-fluid" id="projects">
