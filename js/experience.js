@@ -29,6 +29,10 @@ var experience = [
       {
         type: "Website",
         link: "/Scanned-Website/"
+      },
+      {
+        type: "News",
+        link: "https://www.linkedin.com/feed/update/urn:li:activity:6263304030425018368"
       }
     ],
     image: "images/scanned.png"
@@ -49,5 +53,6 @@ var experience = [
       }
     ],
     image: "http://aeroengineer.org/wp-content/uploads/2016/11/LOCKHEED.png"
-  }
+  },
+  
 ]

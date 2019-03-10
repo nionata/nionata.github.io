@@ -7,6 +7,10 @@ var projects = [
       {
         type: "Devpost",
         link: "https://devpost.com/software/danger-ai-ut58q6"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/nionata/Danger.ai"
       }
     ],
     image: "images/danger.png",
@@ -20,6 +24,10 @@ var projects = [
       {
         type: "Devpost",
         link: "https://devpost.com/software/spatialvr"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/nionata/SpatialVR"
       }
     ],
     image: "images/spatial.png",
@@ -33,6 +41,10 @@ var projects = [
       {
         type: "Devpost",
         link: "https://devpost.com/software/friendcation-qf176p"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/nionata/Friendcation"
       }
     ],
     image: "https://images.trvl-media.com/media/content/expus/graphics/launch/package1320x742.jpg",
@@ -45,7 +57,7 @@ var projects = [
     links: [
       {
         type: "Github",
-        link: ""
+        link: "https://github.com/nionata/Big-Brother-Experience"
       }
     ],
     image: "images/bigbrother.png",
@@ -59,6 +71,10 @@ var projects = [
       {
         type: "Website",
         link: "https://sundialapp.herokuapp.com/"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/nionata/Sundial"
       }
     ],
     image: "images/sundial.png",
@@ -72,6 +88,10 @@ var projects = [
       {
         type: "Website",
         link: "https://elhsehs.github.io/"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/elhsehs/elhsehs.github.io"
       }
     ],
     image: "images/ehs.png",
@@ -85,6 +105,10 @@ var projects = [
       {
         type: "Website",
         link: "http://nicholasionata.com/Hack-My-Idea/"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/nionata/Hack-My-Idea"
       }
     ],
     image: "images/hackmyidea.png",
@@ -111,6 +135,10 @@ var projects = [
       {
         type: "Bukkit",
         link: "https://dev.bukkit.org/bukkit-plugins/eztutorial/"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/nionata/EzTutorial"
       }
     ],
     image: "https://media-curse.cursecdn.com/attachments/125/410/fbbe58db1c73a0d5291bc97e4dc2f544.jpg",

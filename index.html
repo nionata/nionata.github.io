@@ -49,23 +49,24 @@
         <h1><b><u>Experience</u></b></h1>
         <div class="row">
           <div class="col-md-4 p" v-for="exp in experience">
-            <div class="experience">
-                <img v-bind:src="exp.image" class="img-responsive">
-                <h1>{{ exp.name }}</h1>
-                <h3>{{ exp.position }}</h3>
-                <h4>{{ exp.date.start }} - {{ exp.date.end }}</h4>
-                <br/>
-                <div class="proj-desc">
-                    <h4>{{ exp.description }}</h4>
-                    <hr/>
-                    <ul>
-                      <li v-for="tech in exp.technologies"><h5>{{ tech }}</h5></li>
-                    </ul>
+            <div class="card" style="">
+              <img v-bind:src="exp.image" class="card-img-top img-responsive" alt="experience image">
+              <div class="card-body">
+                <h5 class="card-title">{{ exp.name }}</h5>
+                <h6 class="card-subtitle">{{ exp.position }}</h6>
+                <h6 class="card-subtitle text-muted">{{ exp.date.start }} - {{ exp.date.end }}</h4>
+                <p class="card-text">{{ exp.description }}</p>
+              </div>
+              <div class="card-body">
+                <p>Technologies:</p>
+                <div class="btn-group" role="group">
+                  <button v-for="tech in exp.technologies" type="button" class="btn btn-danger">{{ tech }}</button>
                 </div>
-                <hr/>
-                <a v-bind:href="exp.links[0].link" target="_blank">
-                    <button class="btn btn-primary proj-btn">{{ exp.links[0].type }}</button>
-                </a>
+                <br/>
+                <div class="card-link-container">
+                  <a v-for="link in exp.links" v-bind:href="link.link" target="_blank" class="card-link">{{ link.type }}</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -74,21 +75,27 @@
         <h1><b><u>Projects</u></b></h1>
         <div class="row">
           <div class="col-md-4 p" v-for="project in projects">
-              <div class="project">
-                  <img v-bind:src="project.image" class="img-responsive">
-                  <h1> {{ project.name }}</h1>
-                  <div class="proj-desc">
-                    <h4>{{ project.description }}</h4>
-                    <hr/>
-                    <ul>
-                      <li v-for="tech in project.technologies"><h5>{{ tech }}</h5></li>
-                    </ul>
-                  </div>
-                  <hr/>
-                  <a v-bind:href="project.links[0].link" target="_blank">
-                      <button class="btn btn-primary proj-btn">{{ project.links[0].type }}</button>
-                  </a>
+            <div class="card" style="">
+              <img v-bind:src="project.image" class="card-img-top img-responsive" alt="project image">
+              <div class="card-body">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text">{{ project.description }}</p>
               </div>
+              <div class="card-body">
+                <p>Technologies:</p>
+                <div class="btn-group" id="projects-tech-btns" role="group" aria-label="Basic example">
+                  <button v-for="tech in project.technologies" type="button" class="btn btn-danger">{{ tech }}</button>
+                </div>
+                <p>Tags:</p>
+                <div class="btn-group" id="projects-tag-btns" role="group">
+                  <button v-for="tag in project.tags" type="button" class="btn btn-info" >{{ tag }}</button>
+                </div>
+                <br/>
+                <div class="card-link-container">
+                  <a v-for="link in project.links" v-bind:href="link.link" target="_blank" class="card-link">{{ link.type }}</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
