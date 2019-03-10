@@ -73,128 +73,23 @@
     <div class="container-fluid" id="projects">
         <h1><b><u>Projects</u></b></h1>
         <div class="row">
-          <div class="col-md-4 p">
+          <div class="col-md-4 p" v-for="project in projects">
               <div class="project">
-                  <img src="images/icon.jpg" class="img-center">
-                  <h1>SpatialVR</h1>
+                  <img v-bind:src="project.image" class="img-responsive">
+                  <h1> {{ project.name }}</h1>
                   <div class="proj-desc">
-                      <h4>SpatialVR is a virtual reality therapy experience that helps people with spatial hearing disorder. All of the data in the game is presented in a frontend application for trend analysis.</h4>
-                      <hr/>
-                      <h4>React.js - Node.js - MongoDB</h4>
+                    <h4>{{ project.description }}</h4>
+                    <hr/>
+                    <ul>
+                      <li v-for="tech in project.technologies"><h5>{{ tech }}</h5></li>
+                    </ul>
                   </div>
                   <hr/>
-                  <a href="https://devpost.com/software/spatialvr" target="_blank">
-                      <button class="btn btn-primary proj-btn">Devpost</button>
+                  <a v-bind:href="project.links[0].link" target="_blank">
+                      <button class="btn btn-primary proj-btn">{{ project.links[0].type }}</button>
                   </a>
               </div>
           </div>
-            <div class="col-md-4 p">
-                <div class="project">
-                    <img src="https://images.trvl-media.com/media/content/expus/graphics/launch/package1320x742.jpg" class="img-responsive">
-                    <h1>Friendcation</h1>
-                    <div class="proj-desc">
-                        <h4>A web app I co-developed at HackMIT 2017. Using the Amadeus travel API we find the most affordable vacation spots for a group of friends with varying budgets.</h4>
-                        <hr/>
-                        <h4>React.js - Firebase - Amadeus API</h4>
-                    </div>
-                    <hr/>
-                    <a href="https://devpost.com/software/friendcation-qf176p" target="_blank">
-                        <button class="btn btn-primary proj-btn">Devpost</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 p">
-                <div class="project">
-                    <img src="images/bigbrother.png" class="img-responsive">
-                    <h1>Big Brother Experience</h1>
-                    <div class="proj-desc">
-                        <h4>A web app I created as an AP Lit end-of-year project. The app tests your literature knowledge through a quiz. It is themed around the all-knowing Big Brother.</h4>
-                        <hr/>
-                        <h4>React.js - Heroku</h4>
-                    </div>
-                    <hr/>
-                    <a href="http://bigbrotherexperience.herokuapp.com/" target="_blank">
-                        <button class="btn btn-primary proj-btn">Website</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 p">
-                <div class="project">
-                    <img src="images/sundial.png" class="img-responsive">
-                    <h1>Sundial</h1>
-                    <div class="proj-desc">
-                        <h4>A web app I created. The app allows remote teams to find meeting availability across multiple time zones. It uses sessions for easy collaboration.</h4>
-                        <hr/>
-                        <h4>React.js - Heroku - Firebase</h4>
-                    </div>
-                    <hr/>
-                    <a href="https://sundialapp.herokuapp.com/" target="_blank">
-                        <button class="btn btn-primary proj-btn">Website</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 p">
-                <div class="project">
-                    <img src="images/ehs.png" class="img-responsive">
-                    <h1>EHS</h1>
-                    <div class="proj-desc">
-                        <h4>A website I created for my school's Engineering Honor Society. The website provides information about the club including its leadership, committees, and partners.</h4>
-                        <hr/>
-                        <h4>HTML - CSS - JavaScript</h4>
-                    </div>
-                    <hr/>
-                    <a href="https://elhsehs.github.io/" target="_blank">
-                        <button class="btn btn-primary proj-btn">Website</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 p">
-                <div class="project">
-                    <img src="images/hackmyidea.png" class="img-responsive">
-                    <h1>HackMyIdea</h1>
-                    <div class="proj-desc">
-                        <h4>A web app I made at Local Hack Day East Lake High. The tool allows people to form teams for hackathons, projects, etc. based on a common idea.</h4>
-                        <hr/>
-                        <h4>HTML - CSS - jQuery - Firebase</h4>
-                    </div>
-                    <hr/>
-                    <a href="http://nicholasionata.com/Hack-My-Idea/" target="_blank">
-                        <button class="btn btn-primary proj-btn">Website</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 p">
-                <div class="project">
-                    <img src="images/brightcapsule.png" class="img-responsive">
-                    <h1>BrightCapsule</h1>
-                    <div class="proj-desc">
-                        <h4>A startup I co-founded and worked on as the design lead. Our web app allowed kids to engage in monthy hackathons. Made at <a href="https://mitlaunch.com/" target="_blank">MIT Launch</a></h4>
-                        <hr/>
-                        <h4>Illustrator - Photoshop - Premiere</h4>
-                    </div>
-                    <hr/>
-                    <a href="http://brightcapsule.com/" target="_blank">
-                        <button class="btn btn-primary proj-btn">Website</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 col-md-offset-4 p">
-                <div class="project">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pGpjWb-46J0" allowfullscreen></iframe>
-                    </div>
-                    <h1>EzTutorial</h1>
-                    <div class="proj-desc">
-                        <h4>A Minecraft Bukkit plugin I created. The plugin allows server owners to easily create customizable tutorials around their servers to educate players.</h4>
-                        <hr/>
-                        <h4>Java - CraftBukkit</h4>
-                    </div>
-                    <hr/>
-                    <a href="https://dev.bukkit.org/bukkit-plugins/eztutorial/" target="_blank">
-                        <button class="btn btn-primary proj-btn">Dev Bukkit</button>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
     <div class="container-fluid" id="certs">
