@@ -24,3 +24,11 @@ $(function() {
   });
 });
 
+var myData = JSON.parse("data")
+var app = new Vue({
+  el: "app",
+  data: {
+    "projects": json.projects,
+    "experience": json.experience
+  }
+})
