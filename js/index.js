@@ -1,3 +1,13 @@
+$(function() {
+  var app = new Vue({
+    el: "#app",
+    data: {
+      "projects": projects,
+      "experience": experience
+    }
+  })
+})
+
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
   if (scroll != 0) {
@@ -22,5 +32,6 @@ $(function() {
       }
     }
   });
-});
 
+  $('.card')
+});
