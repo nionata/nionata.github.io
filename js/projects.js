@@ -1,5 +1,22 @@
 var projects = [
   {
+    name: "Bloom",
+    description: "A hub for building and growing sustainable businesses.",
+    technologies: ["NodeJS", "Heroku", "CI/CD", "Agile"],
+    links: [
+      {
+        type: "Website",
+        link: "https://bizbloom.herokuapp.com/"
+      },
+      {
+        type: "Github",
+        link: "https://github.com/nionata/Bloom"
+      }
+    ],
+    image: "images/bloom.svg",
+    tags: ["School"]
+  },
+  {
     name: "Danger.ai",
     description: "A video monitoring system powered by deep learning.",
     technologies: ["Python", "Flask", "React.js", "Google Cloud Platform"],

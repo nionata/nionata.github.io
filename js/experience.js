@@ -1,5 +1,22 @@
 var experience = [
   {
+    name: "Stream Monkey",
+    position: "Software Developer Intern",
+    date: {
+      start: "May 2019",
+      end: "Current"
+    },
+    description: "I am working on backend api development.",
+    technologies: ["NodeJS", "Serverless", "AWS"],
+    links: [
+      {
+        type: "Website",
+        link: "http://www.streammonkey.com/"
+      }
+    ],
+    image: "https://cdn-images-1.medium.com/max/800/1*cH5iiA20ThJ1qTeM_34Jkg.png"
+  },
+  {
     name: "Raymond James Financial",
     position: "Software Developer Intern",
     date: {
