@@ -156,7 +156,11 @@ var projects = [
       {
         type: "Github",
         link: "https://github.com/nionata/EzTutorial"
-      }
+      },
+      {
+        type: "Live Stats",
+        link: "http://mcstats.org/plugin/EzTutorial"
+      },
     ],
     image: "https://media-curse.cursecdn.com/attachments/125/410/fbbe58db1c73a0d5291bc97e4dc2f544.jpg",
     tags: ["Indepedent"]
