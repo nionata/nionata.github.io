@@ -7,7 +7,7 @@ var experience = [
       end: "Current"
     },
     description: "I am working on backend api development.",
-    technologies: ["NodeJS", "Serverless", "AWS"],
+    technologies: ["NodeJS", "MySQL", "Serverless", "AWS"],
     links: [
       {
         type: "Website",
