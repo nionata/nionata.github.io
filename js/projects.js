@@ -2,7 +2,7 @@ var projects = [
   {
     name: "Bloom",
     description: "A hub for building and growing sustainable businesses.",
-    technologies: ["NodeJS", "Heroku", "CI/CD", "Agile"],
+    technologies: ["NodeJS", "PostgreSQL", "Heroku", "CI/CD", "Agile"],
     links: [
       {
         type: "Website",
@@ -19,7 +19,7 @@ var projects = [
   {
     name: "Danger.ai",
     description: "A video monitoring system powered by deep learning.",
-    technologies: ["Python", "Flask", "React.js", "Google Cloud Platform"],
+    technologies: ["Python", "Flask", "React.js", "NoSQL", "Serverless", "Google Cloud Platform"],
     links: [
       {
         type: "Devpost",
