@@ -1,7 +1,7 @@
 var experience = [
   {
     name: "Stream Monkey",
-    position: "Software Developer Intern",
+    position: "Backend Engineering Intern",
     date: {
       start: "May 2019",
       end: "Current"
