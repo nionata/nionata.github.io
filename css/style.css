@@ -6,22 +6,22 @@ h1,h2 {
   text-align: center;
 }
 
-#study {
-    color: #2ecc71;
-    text-decoration: none;
+.about-focus {
+  color: #0097A7;
+  transition: 500ms;
+  border-bottom: 1px solid transparent;
 }
 
-#uf {
-    color: #FA4616;
-    text-decoration: none;
+.about-focus:hover {
+  border-color: white;
 }
 
 #nav {
   transition: 1000ms transform ease-in-out;
 }
 
-#contact {
-    text-align: center;
+#contact-row {
+  text-align: center;
 }
 
 #contact-row a {
@@ -54,6 +54,15 @@ h3, h4 {
 
 .color-text {
   background-color: #ecf0f1;
+}
+
+.navbar-nav-right {
+  float: right;
+  padding-top: 5px;
+}
+
+.navbar-nav-right a {
+  margin: 5px;
 }
 
 .navbar-me,
