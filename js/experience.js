@@ -6,12 +6,16 @@ var experience = [
       start: "May 2019",
       end: "Current"
     },
-    description: "I am working on backend api development.",
+    description: "206 Partial Content",
     technologies: ["NodeJS", "MySQL", "Serverless", "AWS"],
     links: [
       {
         type: "Website",
         link: "http://www.streammonkey.com/"
+      },
+      {
+        type: "Blog",
+        link: "https://blog.streammonkey.com/say-hello-to-nick-the-intern-11f21970c312"
       }
     ],
     image: "https://cdn-images-1.medium.com/max/800/1*cH5iiA20ThJ1qTeM_34Jkg.png"
