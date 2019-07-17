@@ -6,10 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "copy": "cp -v ./dist/* ./",
-    "commit": "git commit -a -m \"deploying $npm_package_name version $npm_package_version\"",
     "start": "webpack-dev-server --mode development",
-    "build": "npm run clean && webpack --mode production",
-    "deploy": "npm run build && npm run copy && npm run commit && git push" 
+    "build": "npm run clean && webpack --mode production && npm run copy"
   },
   "repository": {
     "type": "git",
