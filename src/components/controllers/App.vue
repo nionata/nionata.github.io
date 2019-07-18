@@ -1,35 +1,26 @@
 <template>
   <div id="app">
-    <SideNav/>
-    <InformationModal/>
-    <Graph/>
+    <SideNav v-bind:data="data" v-on:navSelect="data.modal.enabled=true, data.modal.display=$event"/>
+    <Main v-bind:data="data"/>
   </div>
 </template>
 
 <script>
 import SideNav from './SideNav.vue'
-import InformationModal from './InformationModal.vue'
-import Graph from './Graph.vue'
+import Main from './Main.vue'
+import '../../sass/main.sass'
 
 export default {
-    components: {
-        'SideNav': SideNav,
-        'InformationModal': InformationModal,
-        'Graph': Graph
-    },
+    components: {SideNav, Main},
     data() {
         return {
-            view: 'master',
-            message: 'Hello World',
+            data: {
+                modal: {
+                    enabled: true,
+                    display: ''
+                }
+            }
         }
     },
 }
 </script>
-
-<style>
-#app {
-    font-size: 50px;
-    font-family: 'Roboto', sans-serif;
-    color: blue;
-}
-</style>
