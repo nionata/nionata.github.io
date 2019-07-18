@@ -1,7 +1,7 @@
 body 
     margin: 0
     font-family: 'Roboto'
-    font-size: 14pt
+    font-size: 12pt
     color: white
 
 p, h2
@@ -17,76 +17,11 @@ p, h2
     #app 
         flex-direction: column
 
-#sideNav 
-    background-color: $secondary
-    flex-grow: 1
-    display: flex
-    flex-direction: column
-    padding-top: 2vw
-
-.navGroup
-    flex-grow: 1
-    display: flex
-    flex-direction: row
-
-.navMediaHolder
-    flex-grow: 1
-    text-align: right
-    padding: 0.5em 0.5em
-
-.navContentHolder
-    flex-grow: 4
-
-.navTitle
-    margin: 0.5em 1em 0em 0.5em
-
-.navItem
-    padding: 0.5em 0 1em 0.5em
-
-.navItem:hover
-    background-color: $subtleAccent
-
-.navItemSelected
-    background-color: $subtleAccent
-
-#navFooter
-    flex-grow: 1
-    text-align: center
-    margin: 2vw
-
-#linkGroup
-    display: flex
-    margin-bottom: 0.5em
-
-#linkGroup
-    a
-        flex-grow: 1
-        color: white
-    a:hover
-        color: $subtleAccent
-
 #main 
-    flex-grow: 8
+    flex-grow: 10
     display: flex
     flex-direction: column
 
-#graph 
-    background-color: $primary;
-    flex-grow: 3
-    padding: 2vw
-
-#modal 
-    background-color: $action
-    padding: 2vw
-
-.modalEnabled 
-    flex-grow: 1
-    transition: flex-grow 1s ease, height 1s ease
-    height: 10vh
-
-.modalDisabled 
-    flex-grow: 0
-    transition: flex-grow 1s ease, height 1s ease
-    height: 0
-    padding: 0
-
+@import sideNav
+@import graph
+@import informationModal

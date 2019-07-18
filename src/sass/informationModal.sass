@@ -1,0 +1,18 @@
+#modal 
+    background-color: $action
+    padding: 2vw
+    display: flex
+
+.modalSection
+    flex-grow: 1
+
+.modalEnabled 
+    flex-grow: 1
+    transition: flex-grow 1s ease, height 1s ease
+    height: 10vh
+
+.modalDisabled 
+    flex-grow: 0
+    transition: flex-grow 1s ease, height 1s ease
+    height: 0
+    padding: 0
