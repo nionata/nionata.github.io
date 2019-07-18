@@ -2,8 +2,9 @@ body
     margin: 0
     font-family: 'Roboto'
     font-size: 14pt
+    color: white
 
-p 
+p, h2
     margin: 0
 
 #app 
@@ -18,7 +19,6 @@ p
 
 #sideNav 
     background-color: $secondary
-    color: white
     flex-grow: 1
     display: flex
     flex-direction: column
@@ -73,9 +73,11 @@ p
 #graph 
     background-color: $primary;
     flex-grow: 3
+    padding: 2vw
 
 #modal 
     background-color: $action
+    padding: 2vw
 
 .modalEnabled 
     flex-grow: 1
@@ -86,4 +88,5 @@ p
     flex-grow: 0
     transition: flex-grow 1s ease, height 1s ease
     height: 0
+    padding: 0
 
