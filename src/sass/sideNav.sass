@@ -1,0 +1,77 @@
+#sideNav 
+    background-color: $secondary
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    padding-top: 2vw
+
+#navToggle
+    flex-grow: 1
+    text-align: left
+    padding: 1em
+    display: none
+    visibility: hidden
+
+.navGroup
+    flex-grow: 1
+    display: flex
+    flex-direction: row
+
+.navMediaHolder
+    flex-grow: 1
+    text-align: right
+    padding: 0.45em 1em
+
+.navContentHolder
+    flex-grow: 4
+    flex-basis: 70%
+
+.navContentHolder
+    p
+        padding: 0.35em 0em 0.35em 0.35em
+
+.navItem:hover
+    background-color: $subtleAccent
+
+.navItemSelected
+    background-color: $subtleAccent
+
+#navFooter
+    flex-grow: 1
+    text-align: center
+    margin: 2vw
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.navFooterSection
+    flex-grow: 1
+
+#linkGroup
+    display: flex
+    margin-bottom: 0.5em
+    v
+
+#linkGroup
+    a
+        flex-grow: 1
+        color: white
+    a:hover
+        color: $subtleAccent
+
+@media only screen and (max-width: 600px) 
+    #navToggle 
+        display: block
+        visibility: visible
+
+    .navClose
+        height: 0vh
+        transition: height 1s ease
+
+    .navOpen
+        height: 100vh
+        transition: height 1s ease
+        
+    .navOpen
+        #navToggle
+            animation: open 2s infinite linear
