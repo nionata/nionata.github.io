@@ -1,6 +1,7 @@
 body 
     margin: 0
-
+    font-family: 'Roboto'
+    font-size: 14pt
 
 #app 
     height: 100vh
@@ -11,18 +12,34 @@ body
 @media only screen and (max-width: 600px) 
     #app 
         flex-direction: column
-    
 
 #sideNav 
     background-color: $secondary;
-    padding: 10px
+    padding: 2vw
     color: white
     flex-grow: 1
+    display: flex
+    flex-direction: column
+
+.navGroup
+    flex-grow: 1
+    display: flex
+    flex-direction: row
+
+.navMediaHolder
+    flex-grow: 1
+
+.navContentHolder
+    flex-grow: 4
 
 #main 
     flex-grow: 4
     display: flex
     flex-direction: column
+
+#graph 
+    background-color: $primary;
+    flex-grow: 3
 
 #modal 
     background-color: #1C2241
@@ -36,8 +53,4 @@ body
     flex-grow: 0
     transition: flex-grow 1s ease, height 1s ease
     height: 0
-
-#graph 
-    background-color: $primary;
-    flex-grow: 3
 
