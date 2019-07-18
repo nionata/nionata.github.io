@@ -3,6 +3,9 @@ body
     font-family: 'Roboto'
     font-size: 14pt
 
+p 
+    margin: 0
+
 #app 
     height: 100vh
     width: 100vw
@@ -14,12 +17,12 @@ body
         flex-direction: column
 
 #sideNav 
-    background-color: $secondary;
-    padding: 2vw
+    background-color: $secondary
     color: white
     flex-grow: 1
     display: flex
     flex-direction: column
+    padding-top: 2vw
 
 .navGroup
     flex-grow: 1
@@ -28,12 +31,42 @@ body
 
 .navMediaHolder
     flex-grow: 1
+    text-align: right
+    padding: 0.5em 0.5em
 
 .navContentHolder
     flex-grow: 4
 
+.navTitle
+    margin: 0.5em 1em 0em 0.5em
+
+.navItem
+    padding: 0.5em 0 1em 0.5em
+
+.navItem:hover
+    background-color: $subtleAccent
+
+.navItemSelected
+    background-color: $subtleAccent
+
+#navFooter
+    flex-grow: 1
+    text-align: center
+    margin: 2vw
+
+#linkGroup
+    display: flex
+    margin-bottom: 0.5em
+
+#linkGroup
+    a
+        flex-grow: 1
+        color: white
+    a:hover
+        color: $subtleAccent
+
 #main 
-    flex-grow: 4
+    flex-grow: 8
     display: flex
     flex-direction: column
 
@@ -42,7 +75,7 @@ body
     flex-grow: 3
 
 #modal 
-    background-color: #1C2241
+    background-color: $action
 
 .modalEnabled 
     flex-grow: 1
