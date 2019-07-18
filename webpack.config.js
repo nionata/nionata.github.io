@@ -9,6 +9,19 @@ module.exports = {
       { test: /\.js$/, use: 'babel-loader' },
       { test: /\.vue$/, use: 'vue-loader' },
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader']},
+      { test: /\.sass$/, 
+        use: [
+          'vue-style-loader', 
+          'css-loader', 
+          {   
+            loader: 'sass-loader',
+            options: {
+              indentedSyntax: true,
+              data: `@import colors`
+            }
+          }
+        ]
+      }
     ]
   },
   devServer: {
