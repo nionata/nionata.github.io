@@ -3,7 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const Webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/js/main.js',
   module: {
     rules: [
       { test: /\.js$/, use: 'babel-loader' },
