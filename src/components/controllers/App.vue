@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <SideNav v-bind:data="data" v-on:navSelect="data.modal.enabled=true, data.modal.display=$event"/>
-    <Main v-bind:data="data"/>
+    <SideNav :data="data" @navSelect="onNavSelect($event)"/>
+    <Main :data="data"/>
   </div>
 </template>
 
@@ -10,17 +10,25 @@ import SideNav from './SideNav.vue'
 import Main from './Main.vue'
 import '../../sass/main.sass'
 
-export default {
+export default { 
     components: {SideNav, Main},
     data() {
         return {
             data: {
                 modal: {
-                    enabled: true,
-                    display: ''
+                    enabled: false,
+                    selected: ''
+                },
+                nav: {
+                    selected: ''
                 }
             }
         }
     },
+    methods: {
+        onNavSelect: function(navItem) {
+            this.data.nav.selected = navItem
+        }
+    }
 }
 </script>
