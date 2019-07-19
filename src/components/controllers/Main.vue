@@ -1,7 +1,7 @@
 <template>
     <div id="main">
-        <Graph v-bind:data="data"/>
-        <informationModal v-bind:data="data" v-on:closeModal="data.modal.enabled=false" />
+        <Graph :data="data"/>
+        <informationModal :data="data"/>
     </div>
 </template>
 
