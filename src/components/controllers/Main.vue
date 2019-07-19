@@ -7,10 +7,9 @@
 
 <script>
 import Graph from '../modules/Graph.vue'
-import InformationModal from '../modules/InformationModal.vue'
 
 export default {
-    components: {Graph, InformationModal},
+    components: {Graph},
     props: ['data']
 }
 </script>
