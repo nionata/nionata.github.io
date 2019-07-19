@@ -12,7 +12,7 @@
                     :key="item" 
                     @click="onNavItemClick(item)" 
                     class="navItem" 
-                    :class="{navItemSelected: item === data.modal.display}">{{item}}
+                    :class="{navItemSelected: item === data.nav.selected}">{{item}}
                 </p>
             </div>
         </div>
@@ -60,7 +60,7 @@ export default {
     methods: {
         onNavItemClick: function(item) {
             this.$emit('navSelect', item)
-            this.mobileNavShow = false
+            this.onMobileNavToggle()
         },
         onMobileNavToggle: function() {
             this.mobileNavShow = !this.mobileNavShow
