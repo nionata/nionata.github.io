@@ -1,6 +1,6 @@
 <template>
-    <div id="main">
-        <Workspace :item="getNavItem()" v-show="showComponent('workspace')"/>
+    <div id="main" :class="{showBackground: !data.nav.initializing}">
+        <Workspace :item="getNavItem()" v-show="showComponent('workspace')" @onDoneInitializing="onDoneInitializing"/>
         <Branches :item="getNavItem()" :modal="data.modal" v-show="showComponent('branches')"/>
         <Tags :item="getNavItem()" v-show="showComponent('tags')"/>
         <Remotes :item="getNavItem()" v-show="showComponent('remotes')"/>
@@ -17,6 +17,10 @@ export default {
     components: {Workspace, Branches, Tags, Remotes},
     props: ['data'],
     methods: {
+        onDoneInitializing: function() {
+            this.$emit('onNavToggle')
+            this.data.nav.initializing = false
+        },
         getNavGroup: function() {
             return this.data.nav.selected.split('.')[0]
         },

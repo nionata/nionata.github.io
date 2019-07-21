@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <SideNav :navSelected="data.nav.selected" @navSelect="onNavSelect($event)"/>
-    <Main :data="data"/>
+    <SideNav :nav="data.nav" @navSelect="onNavSelect($event)" @onNavToggle="onNavToggle"/>
+    <Main :data="data" @onNavToggle="onNavToggle"/>
   </div>
 </template>
 
@@ -20,7 +20,9 @@ export default {
                     selected: ''
                 },
                 nav: {
-                    selected: ''
+                    selected: 'workspace.Life Status',
+                    show: false,
+                    initializing: true
                 }
             }
         }
@@ -28,6 +30,9 @@ export default {
     methods: {
         onNavSelect: function(navItem) {
             this.data.nav.selected = navItem
+        },
+        onNavToggle: function() {
+            this.data.nav.show = !this.data.nav.show
         }
     }
 }

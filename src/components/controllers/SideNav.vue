@@ -1,6 +1,6 @@
 <template>
-    <div id="sideNav" :class="{navOpen: mobileNavShow, navClose: !mobileNavShow}">
-        <i class="fas" :class="{'fa-bars': !mobileNavShow, 'fa-times': mobileNavShow}" @click="onMobileNavToggle" id="navToggle"/>
+    <div id="sideNav" :class="{navOpen: nav.show, navClose: !nav.show, navInitializing: nav.initializing}">
+        <i class="fas" :class="{'fa-bars': !nav.show, 'fa-times': nav.show}" @click="$emit('onNavToggle')" id="navToggle"/>
         <div v-for="group in navGroups" :key="group.title" class="navGroup">
             <div class="navMediaHolder">
                 <i class="fas fa-fw" :class="group.icon"></i>
@@ -30,13 +30,12 @@
 
 <script>
 export default {
-    props: ['navSelected'],
+    props: ['nav'],
     data() {
         return {
-            mobileNavShow: false,
             navGroups: [
                 {
-                    icon: "fa-laptop-code",
+                    icon: "fa-terminal",
                     title: "workspace",
                     items: ["Life Status"]
                 },
@@ -59,16 +58,16 @@ export default {
         }
     },
     methods: {
-        onMobileNavToggle: function() {
-            this.mobileNavShow = !this.mobileNavShow
-        },
         onNavItemClick: function(item) {
             this.$emit('navSelect', item)
-            this.onMobileNavToggle()
+            if (this.isMobile()) this.$emit('onNavToggle')
         },
         isSelected: function(item) {
-            return item === this.navSelected
-        }   
+            return item === this.nav.selected
+        },
+        isMobile: function isMobile() {
+            return window.innerWidth <= 600
+        } 
     }
 }
 </script>
