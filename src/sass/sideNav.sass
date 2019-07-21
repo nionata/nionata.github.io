@@ -1,6 +1,7 @@
 #sideNav 
     background-color: $secondary
     flex-grow: 1
+    flex-basis: 20vw
     display: flex
     flex-direction: column
     padding-top: 2vw
@@ -25,16 +26,14 @@
 .navContentHolder
     flex-grow: 4
     flex-basis: 70%
-
-.navContentHolder
+    .navTitle
+        text-transform: uppercase
+    .navItem:hover
+        background-color: $subtleAccent
+    .navItemSelected
+        background-color: $subtleAccent
     p
         padding: 0.35em 0em 0.35em 0.35em
-
-.navItem:hover
-    background-color: $subtleAccent
-
-.navItemSelected
-    background-color: $subtleAccent
 
 #navFooter
     flex-grow: 1
@@ -50,7 +49,7 @@
 #linkGroup
     display: flex
     margin-bottom: 0.5em
-    v
+    padding: 0 2em 0 2em
 
 #linkGroup
     a
@@ -75,7 +74,3 @@
     .navOpen
         height: 100vh
         transition: height 1s ease
-        
-    .navOpen
-        #navToggle
-            animation: open 2s infinite linear
