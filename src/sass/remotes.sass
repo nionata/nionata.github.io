@@ -1,13 +1,17 @@
 #remotes
     height: 100%
     display: flex
-    flex-direction: column
     text-align: left
-    justify-content: flex-start
-    padding-left: 2vh
-    div
-        justify-content: space-between
-        padding-left: 2vh
+    
+.remoteContainer
+    display: flex
+    padding: 0 0 2vh 2vh
+    flex-direction: column
+
+.logContainer
+    flex-grow: 1
+    display: flex
+    flex-direction: row
 
 #title
     text-transform: capitalize
@@ -24,11 +28,11 @@ a
     color: slategray
 a:hover
     color: $pronouncedAccent
-    
 
-#originContainer
-    
-#designStages
+.remoteImage
     width: 35vw
+    margin: 2vh 5vw
+    transition: all .2s ease-in-out
 
-#legacyContainer
+#legacyImage:hover
+    transform: scale(1.05)
