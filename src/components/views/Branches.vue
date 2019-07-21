@@ -1,5 +1,5 @@
 <template>
-    <div id="graph">
+    <div id="branches">
         <div id="historyContainer">
             <div id="branchContainer">
             </div>
@@ -7,15 +7,15 @@
                 <div 
                     class="commit"
                     v-for="commit in commits"
-                    :key=commit.name
+                    :key="commit.title"
                     @click="onCommitClick(commit)"
-                    :class="{selectedCommit: data.modal.selected.name===commit.name}"
+                    :class="{selectedCommit: modal.selected.title === commit.title}"
                 >
-                    <p class="commitName">{{commit.name}}</p>
+                    <p class="commitTitle">{{commit.title}}</p>
                 </div>
             </div>
         </div>
-        <informationModal :data="data"/>
+        <informationModal :commit="modal.selected" :enabled="modal.enabled" @onModalClose="onModalClose" />
     </div>
 </template>
 
@@ -26,7 +26,7 @@ import InformationModal from '../modules/InformationModal.vue'
 
 export default {
     components: {InformationModal},
-    props: ['data'],
+    props: ['modal', 'item'],
     data() {
         return {
             commits: [
@@ -37,9 +37,13 @@ export default {
     },
     methods: {
         onCommitClick: function(commit) {
-            this.data.modal.enabled = false
-            this.data.modal.selected = commit
-            this.data.modal.enabled = true
+            this.modal.selected = commit
+            this.modal.enabled = true
+            //window.setTimeout(() => window.scrollTo(0, window.()), 500)
+        },
+        onModalClose: function() {
+            this.modal.enabled = false
+            this.modal.selected = ''
         }
     }
 }
