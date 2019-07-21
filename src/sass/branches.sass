@@ -12,9 +12,25 @@
 
 #branchContainer  
     flex-grow: 1
+    flex-basis: 15vw
+    display: flex
+    flex-direction: column
+
+.branch
+    height: 53px
+
+.masterBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg)
+    
+.experienceBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(350deg)
+
+.projectsBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(100deg)
 
 #commitContainer
-    flex-grow: 3
+    flex-grow: 5
+    flex-basis: 85vw
 
 .commit
     padding: 1em
