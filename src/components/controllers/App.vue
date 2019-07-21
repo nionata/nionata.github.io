@@ -28,10 +28,6 @@ export default {
     methods: {
         onNavSelect: function(navItem) {
             this.data.nav.selected = navItem
-
-            if (navItem == 'remotes.legacy') {
-                window.open("/bin/archived/index.html", "_blank")
-            }
         }
     }
 }
