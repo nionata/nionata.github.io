@@ -1,36 +1,40 @@
 <template>
-    <div id="modal" :class="{modalEnabled: data.modal.enabled, modalDisabled: !data.modal.enabled}">
-        <transition name="fade">
-            <div id="modalWrapper" v-if="data.modal.enabled">
-                <div id="modalLeft">
-                    <div id="metaContainer">
-                    hey
-                    </div>
-                    <div id="tagsContainer">
-                    hi
-                    </div>
-                </div>
-                <div id="modalRight">
-                    <div id="modalDivider">
-                    </div>
-                    <div id="descriptionContainer">
-                    </div>
-                    <div id="toggleContainer">
-                        <i class="fas fa-times" @click="onModalClose"/>
-                    </div>
+    <div id="modal" :class="{modalEnabled: enabled, modalDisabled: !enabled}">
+        <div id="modalLeft">
+            <div id="metaContainer">
+                <p id="modalTitle">{{commit.title}}</p>
+                <p>{{commit.subTitle}}</p>
+                <p v-if="commit.date">{{commit.date.start}} - {{commit.date.end}}</p>
+            </div>
+            <div id="linksContainer">
+                <a class="link" target="_blank" v-for="link in commit.links" :key="link.link" :href="link.link">{{link.type}}</a>
+            </div>
+            <div id="tagsContainer">
+                <p class="tag" v-for="tag in commit.tags" :key="tag">{{tag}}</p>
+            </div>
+        </div>
+        <div id="modalRight">
+            <div id="descriptionsContainer" v-if="commit.description && commit.description.length">
+                <div id="descriptionContainer" v-for="(description, index) in commit.description" :key="index">
+                    <p class="descriptionNumber">{{index + 1}}</p>
+                    <p class="description">{{description}}</p>
                 </div>
             </div>
-        </transition>
+            <div id="toggleContainer">
+                <transition
+                    name="modalClose"
+                    enter-active-class="animated rotateIn"
+                    leave-active-class="animated rotateOut"
+                >
+                    <i v-if="enabled" class="fas fa-times" @click="$emit('onModalClose')" />
+                </transition>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['data'],
-    methods: {
-        onModalClose: function() {
-            this.data.modal.enabled = false
-        }
-    }
+    props: ['commit', 'enabled'],
 }
 </script>

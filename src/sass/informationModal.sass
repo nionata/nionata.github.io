@@ -1,46 +1,80 @@
 #modal 
     background-color: $action
-
-.modalEnabled 
-    flex-basis: 50vh
-    transition: flex-basis 1s ease-in
+    display: flex
 
 .modalDisabled 
     flex-basis: 0vh
-    transition: flex-basis 1s ease
+    height: 0
+    transition: all 1s ease, padding 0.5s ease-out 0.5s
 
-#modalWrapper
-    display: flex
-    padding: 2vh
-
-#modalLeft
-    flex-grow: 1
-    display: flex
-    flex-direction: column
-
-#metaContainer
-    flex-grow: 5
-
-#tagsContainer
-    flex-grow: 1
-
-#modalRight
-    flex-grow: 1
-    display: flex
-
-#modalDivider
-    flex-grow: 1
-    display: flex
-    flex-direction: column
-
-#descriptionContainer
-    flex-grow: 15
-    display: flex
-    flex-direction: column
-
-#toggleContainer
-    flex-grow: 1
-    text-align: center
+.modalEnabled 
+    flex-basis: 75vh
+    transition: all 1s ease
+    padding: 5vh
+    #modalLeft
+        flex-grow: 1
+        flex-basis: 40vw
+        display: flex
+        flex-direction: column
+        p 
+            margin: 0.5em
+        #metaContainer
+            flex-grow: 5
+            justify-content: space-between
+            #modalTitle
+                text-transform: uppercase
+                margin: 0 0 1em 0
+        #tagsContainer
+            flex-grow: 1
+            display: flex
+            align-items: center
+            text-align: center
+            justify-content: flex-start
+            flex-wrap: wrap
+            .tag
+                flex-grow: 1
+                padding: 0.5em
+                border-radius: 10px
+                background-color: $pronouncedAccent
+        #linksContainer
+            flex-grow: 1
+            display: flex
+            text-align: center
+            align-items: center
+            .link
+                flex: 1
+                padding: 0.5em
+                text-decoration: none
+                color: white
+            .link:hover
+                    color: $pronouncedAccent
+    #modalRight
+        flex-grow: 1
+        flex-basis: 60vw
+        display: flex
+        #descriptionsContainer
+            flex-grow: 15
+            display: flex
+            flex-direction: column
+            flex-basis: 90vw
+            margin-left: 2vw
+        #descriptionContainer   
+            flex-grow: 1
+            display: flex
+            align-items: center
+            p
+                flex-grow: 1
+            .descriptionNumber
+                flex-basis: 5vw
+                text-align: center
+            .description
+                flex-basis: 95vw
+                border-left: 1px solid white
+                padding-left: 1vw
+        #toggleContainer
+            flex-grow: 1
+            text-align: right
+            flex-basis: 5vw
 
 .fade-enter-active, .fade-leave-active 
   transition: opacity .5s
