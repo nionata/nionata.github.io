@@ -10,16 +10,17 @@
                 <p 
                     v-for="item in group.items" 
                     :key="item" 
-                    @click="onNavItemClick(item)" 
+                    @click="onNavItemClick(`${group.title}.${item}`)" 
                     class="navItem" 
-                    :class="{navItemSelected: item === data.nav.selected}">{{item}}
+                    :class="{navItemSelected: isSelected(`${group.title}.${item}`)}">{{item}}
                 </p>
             </div>
         </div>
         <div id="navFooter">
             <div id="linkGroup" class="footerSection">
                 <a href="https://github.com/nionata" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                <a href="mailto:nionata@ufl.edu" target="_blank"><i class="far fa-envelope fa-2x"></i></a>
+                <!--<a href="mailto:nionata@ufl.edu" target="_blank"><i class="far fa-envelope fa-2x"></i></a>-->
+                <a href="/bin/archived/resume.pdf" target="_blank"><i class="far fa-file-alt fa-2x"></i></a>
                 <a href="https://www.linkedin.com/in/nionata/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a>
             </div>
             <p href="bin/archived/index.html" class="footerSection">nicholas-ionata (Git)</p>
@@ -29,42 +30,45 @@
 
 <script>
 export default {
-    props: ['data', 'navSelect'],
+    props: ['navSelected'],
     data() {
         return {
             mobileNavShow: false,
             navGroups: [
                 {
                     icon: "fa-laptop-code",
-                    title: "WORKSPACE",
+                    title: "workspace",
                     items: ["Life Status"]
                 },
                 {
                     icon: "fa-code-branch",
-                    title: "BRANCHES",
+                    title: "branches",
                     items: ["master", "experience", "projects"]
                 },
                 {
                     icon: "fa-tag",
-                    title: "TAGS",
+                    title: "tags",
                     items: ["languages", "tools", "technologies"]
                 },
                 {
                     icon: "fa-tag",
-                    title: "REMOTES",
+                    title: "remotes",
                     items: ["origin", "legacy"]
                 }
             ]
         }
     },
     methods: {
+        onMobileNavToggle: function() {
+            this.mobileNavShow = !this.mobileNavShow
+        },
         onNavItemClick: function(item) {
             this.$emit('navSelect', item)
             this.onMobileNavToggle()
         },
-        onMobileNavToggle: function() {
-            this.mobileNavShow = !this.mobileNavShow
-        }
+        isSelected: function(item) {
+            return item === this.navSelected
+        }   
     }
 }
 </script>
