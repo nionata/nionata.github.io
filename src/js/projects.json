@@ -1,8 +1,8 @@
 [
   {
-    "name": "Bloom",
-    "description": "A hub for building and growing sustainable businesses.",
-    "technologies": ["NodeJS", "PostgreSQL", "Heroku", "CI/CD", "Agile"],
+    "title": "Bloom",
+    "subTitle": "A hub for building and growing sustainable businesses.",
+    "tags": ["NodeJS", "PostgreSQL", "Heroku", "CI/CD", "Agile"],
     "links": [
       {
         "type": "Website",
@@ -14,12 +14,14 @@
       }
     ],
     "image": "images/bloom.svg",
-    "tags": ["School"]
+    "description": [
+
+    ]
   },
   {
-    "name": "Danger.ai",
-    "description": "A video monitoring system powered by deep learning.",
-    "technologies": ["Python", "Flask", "React.js", "NoSQL", "Serverless", "Google Cloud Platform"],
+    "title": "Danger.ai",
+    "subTitle": "A video monitoring system powered by deep learning.",
+    "tags": ["Python", "Flask", "React.js", "NoSQL", "Serverless", "Google Cloud Platform"],
     "links": [
       {
         "type": "Devpost",
@@ -31,12 +33,14 @@
       }
     ],
     "image": "images/danger.png",
-    "tags": ["Hackathon"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "SpatialVR",
-    "description": "A VR experience and fullstack web app for helping people with spatial hearing disorders.",
-    "technologies": ["React.js", "Node.js", "MongoDB"],
+    "title": "SpatialVR",
+    "subTitle": "A VR experience and fullstack web app for helping people with spatial hearing disorders.",
+    "tags": ["React.js", "Node.js", "MongoDB"],
     "link": [
       {
         "type": "Devpost",
@@ -48,12 +52,14 @@
       }
     ],
     "image": "images/spatial.png",
-    "tags": ["Hackathon"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "Friendcation",
-    "description": "The easiest and most economical way to plan a vacation with a group of distant friends.",
-    "technologies": ["React.js", "Firebase", "Amadeus Travel API"],
+    "title": "Friendcation",
+    "subTitle": "The easiest and most economical way to plan a vacation with a group of distant friends.",
+    "tags": ["React.js", "Firebase", "Amadeus Travel API"],
     "links": [
       {
         "type": "Devpost",
@@ -65,12 +71,14 @@
       }
     ],
     "image": "https://images.trvl-media.com/media/content/expus/graphics/launch/package1320x742.jpg",
-    "tags": ["Hackathon"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "Big Brother Experience",
-    "description": "Big Brother tests your knowledge of the book 1984 through an interactive quiz.",
-    "technologies": ["React.js", "Heroku"],
+    "title": "Big Brother Experience",
+    "subTitle": "Big Brother tests your knowledge of the book 1984 through an interactive quiz.",
+    "tags": ["React.js", "Heroku"],
     "links": [
       {
         "type": "Github",
@@ -78,12 +86,14 @@
       }
     ],
     "image": "images/bigbrother.png",
-    "tags": ["School"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "Sundial",
-    "description": "Find ideal meeting times across multiple time zones.",
-    "technologies": ["React.js", "Heroku", "Firebase"],
+    "title": "Sundial",
+    "subTitle": "Find ideal meeting times across multiple time zones.",
+    "tags": ["React.js", "Heroku", "Firebase"],
     "links": [
       {
         "type": "Website",
@@ -95,12 +105,14 @@
       }
     ],
     "image": "images/sundial.png",
-    "tags": ["Independent"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "EHS",
-    "description": "Displays information about my high school's Engineering Honor Society.",
-    "technologies": ["HTML", "CSS", "JavaScript"],
+    "title": "EHS",
+    "subTitle": "Displays information about my high school's Engineering Honor Society.",
+    "tags": ["HTML", "CSS", "JavaScript"],
     "links": [
       {
         "type": "Website",
@@ -112,12 +124,14 @@
       }
     ],
     "image": "images/ehs.png",
-    "tags": ["School"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "HackMyIdea",
-    "description": "Allows people to form teams for projects based on a common idea or complementary skill sets.",
-    "technologies": ["HTML", "CSS", "JavaScript"],
+    "title": "HackMyIdea",
+    "subTitle": "Allows people to form teams for projects based on a common idea or complementary skill sets.",
+    "tags": ["HTML", "CSS", "JavaScript"],
     "links": [
       {
         "type": "Website",
@@ -129,12 +143,14 @@
       }
     ],
     "image": "images/hackmyidea.png",
-    "tags": ["Hackathon"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "BrightCapsule",
-    "description": "A platfrom for kids to build, learn, and explore by participating in monthy hackathons. This was created at a summer program at MIT called Launch.",
-    "technologies": ["Illustrator", "Photoshop", "Premiere"],
+    "title": "BrightCapsule",
+    "subTitle": "A platfrom for kids to build, learn, and explore by participating in monthy hackathons. This was created at a summer program at MIT called Launch.",
+    "tags": ["Illustrator", "Photoshop", "Premiere"],
     "links": [
       {
         "type": "Website",
@@ -142,12 +158,14 @@
       }
     ],
     "image": "images/brightcapsule.png",
-    "tags": ["School"]
+    "description": [
+      
+    ]
   },
   {
-    "name": "EzTutorial",
-    "description": "A Minecraft server plugin that enables server owners to easily create customizable tutorials around their servers to educate players.",
-    "technologies": ["Java", "CraftBukkit"],
+    "title": "EzTutorial",
+    "subTitle": "A Minecraft server plugin that enables server owners to easily create customizable tutorials around their servers to educate players.",
+    "tags": ["Java", "CraftBukkit"],
     "links": [
       {
         "type": "Bukkit",
@@ -163,6 +181,8 @@
       }
     ],
     "image": "https://media-curse.cursecdn.com/attachments/125/410/fbbe58db1c73a0d5291bc97e4dc2f544.jpg",
-    "tags": ["Indepedent"]
+    "description": [
+      
+    ]
   }
 ]

@@ -1,13 +1,15 @@
 [
   {
-    "name": "Stream Monkey",
-    "position": "Backend Engineering Intern",
+    "title": "Stream Monkey",
+    "subTitle": "Backend Engineering Intern",
     "date": {
       "start": "May 2019",
       "end": "Current"
     },
-    "description": "206 Partial Content",
-    "technologies": ["NodeJS", "MySQL", "Serverless", "AWS"],
+    "description": [
+      "206 Partial Content"
+    ],
+    "tags": ["NodeJS", "MySQL", "Serverless", "AWS"],
     "links": [
       {
         "type": "Website",
@@ -21,14 +23,18 @@
     "image": "https://cdn-images-1.medium.com/max/800/1*cH5iiA20ThJ1qTeM_34Jkg.png"
   },
   {
-    "name": "Raymond James Financial",
-    "position": "Software Developer Intern",
+    "title": "Raymond James Financial",
+    "subTitle": "Software Developer Intern",
     "date": {
       "start": "May 2018",
       "end": "August 2018"
     },
-    "description": "I worked on Enterprise Services and the Secure Software Development Lifecycle.",
-    "technologies": ["Java", "Spring", "OracleDB"],
+    "description": [
+      "I worked on Enterprise Services and the Secure Software Development Lifecycle",
+      "Did that thooadfj;laskd",
+      "adsjfas;dlfj"
+    ],
+    "tags": ["Java", "Spring", "OracleDB"],
     "links": [
       {
         "type": "Website",
@@ -38,14 +44,16 @@
     "image": "http://www.raymondjames.com/freestone/images/aboutus_banner.png"
   },
   {
-    "name": "Scanned",
-    "position": "Co-Founder/Software Developer",
+    "title": "Scanned",
+    "subTitle": "Co-Founder/Software Developer",
     "date": {
       "start": "September 2016",
       "end": "September 2018"
     },
-    "description": "A startup I co-founded and worked as the tech lead. Through mobile and web apps we provided a highly efficient group attendance tracking service.",
-    "technologies": ["React.js", "React Native", "Firebase"],
+    "description": [
+      "A startup I co-founded and worked as the tech lead. Through mobile and web apps we provided a highly efficient group attendance tracking service"
+    ],
+    "tags": ["React.js", "React Native", "Firebase"],
     "links": [
       {
         "type": "Website",
@@ -59,14 +67,16 @@
     "image": "images/scanned.png"
   },
   {
-    "name": "Lockheed Martin",
-    "position": "Industrial Engineering Intern",
+    "title": "Lockheed Martin",
+    "subTitle": "Industrial Engineering Intern",
     "date": {
       "start": "May 2017",
       "end": "August 2017"
     },
-    "description": "I worked on data analytics and reporting. I created two tools that drastically reduced process times.",
-    "technologies": ["VBA", "Excel", "Data Analysis"],
+    "description": [
+      "I worked on data analytics and reporting. I created two tools that drastically reduced process times"
+    ],
+    "tags": ["VBA", "Excel", "Data Analysis"],
     "links": [
       {
         "type": "Website",
