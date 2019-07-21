@@ -6,22 +6,23 @@
                     <img 
                         src="/src/images/branch.svg"
                         class="masterBranch"
-                        v-if="commit.type !== 'masterBranch'"
+                        v-if="commit.type !== 'master'"
                     />
                     <img 
                         src="/src/images/branchCommit.svg"
-                        :class="commit.type"
+                        :class="commit.class"
                     />
                 </div>
             </div>
             <div id="commitContainer">
                 <div 
                     class="commit"
-                    v-for="commit in getCommits()"
+                    v-for="(commit, index) in getCommits()"
                     :key="commit.title"
                     @click="onCommitClick(commit)"
                     :class="{selectedCommit: modal.selected.title === commit.title}"
                 >
+                    <p class="tag" v-if="index === 0"><i class="fas fa-code-branch" />{{commit.type}}</p>
                     <p class="commitTitle">{{commit.title}}</p>
                 </div>
             </div>
@@ -56,7 +57,8 @@ export default {
         },
         mapCommits: function(commits, type) {
             return commits.map(commit => {
-                commit.type = `${type}Branch`
+                commit.type = type
+                commit.class = `${type}Branch`
                 return commit
             })
         },
