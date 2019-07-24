@@ -1,7 +1,7 @@
 <template>
     <div id="sideNav" :class="{navOpen: nav.show, navClose: !nav.show, navInitializing: nav.initializing}">
         <i class="fas" :class="{'fa-bars': !nav.show, 'fa-times': nav.show}" @click="$emit('onNavToggle')" id="navToggle"/>
-        <div v-for="group in navGroups" :key="group.title" class="navGroup">
+        <div v-for="group in getNav()" :key="group.title" class="navGroup">
             <div class="navMediaHolder">
                 <i class="fas fa-fw" :class="group.icon"></i>
             </div>
@@ -29,35 +29,14 @@
 </template>
 
 <script>
+import nav from '../../js/nav.json'
+
 export default {
     props: ['nav'],
-    data() {
-        return {
-            navGroups: [
-                {
-                    icon: "fa-terminal",
-                    title: "workspace",
-                    items: ["Life Status"]
-                },
-                {
-                    icon: "fa-code-branch",
-                    title: "branches",
-                    items: ["master", "experience", "projects"]
-                },
-                {
-                    icon: "fa-tag",
-                    title: "tags",
-                    items: ["languages", "tools", "technologies"]
-                },
-                {
-                    icon: "fa-tag",
-                    title: "remotes",
-                    items: ["origin", "legacy"]
-                }
-            ]
-        }
-    },
     methods: {
+        getNav: function() {
+            return nav
+        },
         onNavItemClick: function(item) {
             this.$emit('navSelect', item)
             if (this.isMobile()) this.$emit('onNavToggle')

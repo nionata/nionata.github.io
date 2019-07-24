@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "fa-terminal",
+        "title": "workspace",
+        "items": ["Life Status"]
+    },
+    {
+        "icon": "fa-code-branch",
+        "title": "branches",
+        "items": ["master", "experience", "projects"]
+    },
+    {
+        "icon": "fa-tag",
+        "title": "tags",
+        "items": ["languages", "tools", "technologies"]
+    },
+    {
+        "icon": "fa-tag",
+        "title": "remotes",
+        "items": ["origin", "legacy"]
+    }
+]
