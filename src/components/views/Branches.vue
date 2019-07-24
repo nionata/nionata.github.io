@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import projects from '../../js/projects.json'
-import experience from '../../js/experience.json'
+import projectsRaw from '../../js/projects.json'
+import experienceRaw from '../../js/experience.json'
 import InformationModal from '../modules/InformationModal.vue'
 
 export default {
@@ -41,21 +41,21 @@ export default {
     props: ['modal', 'item'],
     data() {
         return {
-
+            commitGroups: {}
         }
     },
     methods: {
         getCommits: function() {
             switch(this.item) {
                 case 'master':
-                    return this.mapCommits([...projects, ...experience], 'master')
+                    return this.labelCommits([...projectsRaw, ...experienceRaw], 'master')
                 case 'experience':
-                    return this.mapCommits(experience, 'experience')
+                    return this.labelCommits(experienceRaw, 'experience')
                 case 'projects':
-                    return this.mapCommits(projects, 'projects')
+                    return this.labelCommits(projectsRaw, 'projects')
             }
         },
-        mapCommits: function(commits, type) {
+        labelCommits: function(commits, type) {
             return commits.map(commit => {
                 commit.type = type
                 commit.class = `${type}Branch`
@@ -65,12 +65,31 @@ export default {
         onCommitClick: function(commit) {
             this.modal.selected = commit
             this.modal.enabled = true
-            //window.setTimeout(() => window.scrollTo(0, window.()), 500)
         },
         onModalClose: function() {
             this.modal.enabled = false
             this.modal.selected = ''
         }
+    },
+    mounted: function() {
+        const projects = this.labelCommits(projectsRaw, 'projects')
+        const experience = this.labelCommits(experienceRaw, 'experience')
+
+        let commitGroups = {}
+        let commits = [...projects, ...experience]
+
+        commits.sort((a, b) => new Date(a.date.start) - new Date(b.date.start))
+        commits.forEach(commit => {
+            const year = new Date(commit.date.start).getFullYear()
+
+            if (commitGroups[year]) {
+                commitGroups[year].push(commit)
+            } else {
+                commitGroups[year] = [commit]
+            }
+        })
+    
+        this.commitGroups = commitGroups
     }
 }
 </script>
