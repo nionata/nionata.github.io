@@ -16,7 +16,11 @@
     "image": "images/bloom.svg",
     "description": [
 
-    ]
+    ],
+    "date": {
+      "start": "February 2019",
+      "end": "April 2019"
+    }
   },
   {
     "title": "Danger.ai",
@@ -35,7 +39,11 @@
     "image": "images/danger.png",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "January 2019",
+      "end": "January 2019"
+    }
   },
   {
     "title": "SpatialVR",
@@ -54,7 +62,11 @@
     "image": "images/spatial.png",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "January 2018",
+      "end": "January 2018"
+    }
   },
   {
     "title": "Friendcation",
@@ -73,7 +85,11 @@
     "image": "https://images.trvl-media.com/media/content/expus/graphics/launch/package1320x742.jpg",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "September 2017",
+      "end": "September 2017"
+    }
   },
   {
     "title": "Big Brother Experience",
@@ -88,7 +104,11 @@
     "image": "images/bigbrother.png",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "April 2017",
+      "end": "April 2017"
+    }
   },
   {
     "title": "Sundial",
@@ -107,7 +127,11 @@
     "image": "images/sundial.png",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "January 2017",
+      "end": "March 2017"
+    }
   },
   {
     "title": "EHS",
@@ -126,7 +150,11 @@
     "image": "images/ehs.png",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "December 2016",
+      "end": "April 2017"
+    }
   },
   {
     "title": "HackMyIdea",
@@ -145,7 +173,10 @@
     "image": "images/hackmyidea.png",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "December 2016"
+    }
   },
   {
     "title": "BrightCapsule",
@@ -160,7 +191,11 @@
     "image": "images/brightcapsule.png",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "June 2016",
+      "end": "July 2016"
+    }
   },
   {
     "title": "EzTutorial",
@@ -183,6 +218,10 @@
     "image": "https://media-curse.cursecdn.com/attachments/125/410/fbbe58db1c73a0d5291bc97e4dc2f544.jpg",
     "description": [
       
-    ]
+    ],
+    "date": {
+      "start": "March 2014",
+      "end": "January 2017"
+    }
   }
 ]
