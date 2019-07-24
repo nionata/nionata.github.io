@@ -22,27 +22,8 @@
 </template>
 
 <script>
-const lines = [
-    "# Me",
-    "Hi. I'm Nicholas Ionata",
-    "",
-    "# School",
-    "I am a junior at the University of Florida studying Computer Science and Buisness",
-    "",
-    "# Work",
-    "I am a Backend Engineering Intern at Stream Monkey!",
-    "",
-    "# Interests",
-    "Technology, business, fitness, and traveling",
-    "",
-    "# What's next?",
-    "Get in touch via Linkedin or the methods on my resume",
-    "",
-    "npm run start",
-    ""
-]
-const finalLine = "Enjoy"
-const charDelay = 80
+import terminal from '../../js/terminal.json'
+const {lines, charDelay} = terminal
 
 export default {
     components: {},
@@ -58,34 +39,20 @@ export default {
             return line.includes("#")
         },
         processLine: function(i) {
-            if(i === lines.length) {
-                // Reloop Terminal
-                // window.setTimeout(() => {
-                //     this.content = []
-                //     this.processLine(0)
-                // }, 5000)
-                this.line = finalLine
+            const lastIndex = lines.length - 1
+
+            if(i === lastIndex) {
+                this.line = lines[lastIndex]
                 this.$emit('onDoneInitializing')
                 return 
             }
 
-            let line = lines[i]
-            this.line = line // ''
-            // this.processChars(line, 0)
+            this.line = lines[i] 
 
             window.setTimeout(() => {
-                this.addLine(line)
+                this.content.push(this.line)
                 this.processLine(i + 1)
-            }, line.length * charDelay)
-        },
-        // processChars: function(line, i) {
-        //     window.setTimeout(() => {
-        //         this.line += line.charAt(i)
-        //         this.processChars(line, i + 1)
-        //     }, charDelay)
-        // },
-        addLine: function(line) {
-            this.content.push(line)
+            }, this.line.length * charDelay)
         }
     },
     mounted: function() {

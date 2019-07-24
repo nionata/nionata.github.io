@@ -1,0 +1,27 @@
+{
+    "lines": [
+        "# Me",
+        "Hi. I'm Nicholas Ionata",
+        "",
+        "# Status",
+        "Backend Engineering Intern at Stream Monkey",
+        "",
+        "# Education",
+        "I am a junior at the University of Florida studying computer science and buisness",
+        "",
+        "# Dev",
+        "I love creating software",
+        "I am proficient in fullstack development with a preference on backend engineering and systems",
+        "",
+        "# Interests",
+        "Technology, business, fitness, and traveling",
+        "",
+        "# What's next?",
+        "Get in touch via Linkedin or the methods on my resume",
+        "",
+        "npm run start",
+        "",
+        "Enjoy"
+    ],
+    "charDelay": 50
+}
