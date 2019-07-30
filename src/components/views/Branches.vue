@@ -90,7 +90,7 @@ export default {
         getCommits: function() {
             switch(this.item) {
                 case 'master':
-                    return this.commits.merged
+                    return this.commits
                 case 'experience':
                     return this.labelCommits(experienceRaw, 'experience')
                 case 'projects':
@@ -98,8 +98,15 @@ export default {
             }
         },
         getBranchImage(branch, type) {
-            if (branch === type) return '/src/images/branchCommit.svg'
-            return '/src/images/branch.svg'
+            switch (type) {
+                case branch:
+                    return '/src/images/branchCommit.svg'
+                case 'rootInit':
+                    if (branch === 'master') return '/src/images/masterBranch.svg' 
+                    return ''
+                default: 
+                    return '/src/images/branch.svg'
+            }
         },
         labelCommits: function(commits, type) {
             return commits.map(commit => {
@@ -117,7 +124,7 @@ export default {
             this.modal.selected = ''
         },
         processCommit: function(commitGroups, merged, meta) {
-            if(!commitGroups.length) return {merged, meta}
+            if(!commitGroups.length) return merged
             
             const [year, commits] = commitGroups.shift()
 
@@ -151,7 +158,10 @@ export default {
             }
         })
 
-        this.commits = this.processCommit(Object.entries(commitGroups), [], {})
+        let processed = this.processCommit(Object.entries(commitGroups), [], {})
+        processed[processed.length - 1].type = 'rootInit'
+
+        this.commits = processed
     }
 }
 </script>
