@@ -4,13 +4,19 @@
             <div id="branchContainer">
                 <div class="branch" v-for="commit in getCommits()" :key="commit.title">
                     <img 
-                        src="/src/images/masterBranch.svg"
+                        :src="getBranchImage('master', commit.type)"
                         class="masterBranch"
-                        v-if="commit.type !== 'master'"
+                        v-if="item === 'master'"
                     />
                     <img 
-                        src="/src/images/branchCommit.svg"
-                        :class="commit.class"
+                        :src="getBranchImage('projects', commit.type)"
+                        class="projectsBranch"
+                        v-if="item === 'master' || item === 'projects'"
+                    />
+                    <img 
+                        :src="getBranchImage('experience', commit.type)"
+                        class="experienceBranch"
+                        v-if="item === 'master' || item === 'experience'"
                     />
                 </div>
             </div>
@@ -50,7 +56,7 @@ const initCommit = (year) => {
             "start": "",
             "end": ""
         },
-        "type": "masterBranch",
+        "type": "master",
         "class": "masterBranch"
     }
 }
@@ -90,6 +96,10 @@ export default {
                 case 'projects':
                     return this.labelCommits(projectsRaw, 'projects')
             }
+        },
+        getBranchImage(branch, type) {
+            if (branch === type) return '/src/images/branchCommit.svg'
+            return '/src/images/branch.svg'
         },
         labelCommits: function(commits, type) {
             return commits.map(commit => {
