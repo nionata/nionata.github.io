@@ -28,7 +28,7 @@
                     @click="onCommitClick(commit)"
                     :class="{selectedCommit: modal.selected.title === commit.title}"
                 >
-                    <p class="tag" v-if="index === 0"><i class="fas fa-code-branch" />{{commit.type}}</p>
+                    <p class="tag" v-if="commits.tags.includes(index)"><i class="fas fa-code-branch" />{{commit.type}}</p>
                     <p class="commitTitle">{{commit.title}}</p>
                 </div>
             </div>
@@ -41,8 +41,6 @@
 import projectsRaw from '../../js/projects.json'
 import experienceRaw from '../../js/experience.json'
 import InformationModal from '../modules/InformationModal.vue'
-
-const tit = 'fasd'
 
 const initCommit = (year) => {
     return {
@@ -57,11 +55,10 @@ const initCommit = (year) => {
             "end": ""
         },
         "type": "master",
-        "class": "masterBranch"
     }
 }
 
-const mergeCommit = (year, type) => {
+const mergeCommit = (year, type, position) => {
     return {
         "title": `merge '${type}' at the end of ${year}`,
         "subTitle": `a good year of ${type}`,
@@ -73,8 +70,23 @@ const mergeCommit = (year, type) => {
             "start": "",
             "end": ""
         },
+        "type": `merge${position}`,
+    }
+}
+
+const uncommittedChanges = () => {
+    return {
+        "title": "uncommitted changes",
+        "subTitle": "",
+        "tags": ["Stuff!"],
+        "links": [],
+        "image": "",
+        "description": [],
+        "date": {
+            "start": "",
+            "end": ""
+        },
         "type": "master",
-        "class": "masterBranch"
     }
 }
 
@@ -90,7 +102,7 @@ export default {
         getCommits: function() {
             switch(this.item) {
                 case 'master':
-                    return this.commits
+                    return this.commits.merged
                 case 'experience':
                     return this.labelCommits(experienceRaw, 'experience')
                 case 'projects':
@@ -111,7 +123,6 @@ export default {
         labelCommits: function(commits, type) {
             return commits.map(commit => {
                 commit.type = type
-                commit.class = `${type}Branch`
                 return commit
             })
         },
@@ -124,18 +135,19 @@ export default {
             this.modal.selected = ''
         },
         processCommit: function(commitGroups, merged, meta) {
-            if(!commitGroups.length) return merged
+            if(!commitGroups.length) return {merged, meta}
             
             const [year, commits] = commitGroups.shift()
 
-            meta[year] = {
-                projects: commits.find(commit => commit.type === 'projects') !== undefined,
-                experience: commits.find(commit => commit.type === 'experience') !== undefined,
+            meta = {
+                projects: commits.findIndex(commit => commit.type === 'projects'),
+                experience: commits.findIndex(commit => commit.type === 'experience'),
+                master: commits.findIndex(commit => commit.type === 'master')
             }
 
             merged.unshift(...commits)
-            if (meta[year].projects && commitGroups.length) merged.unshift(mergeCommit(year, 'projects'))
-            if (meta[year].experience && commitGroups.length) merged.unshift(mergeCommit(year, 'experience'))
+            if (meta.projects !== -1 && commitGroups.length) merged.unshift(mergeCommit(year, 'projects', 'Inner'))
+            if (meta.experience !== -1 && commitGroups.length) merged.unshift(mergeCommit(year, 'experience', 'Outer'))
 
             return this.processCommit(commitGroups, merged, meta)
         }
@@ -158,10 +170,11 @@ export default {
             }
         })
 
-        let processed = this.processCommit(Object.entries(commitGroups), [], {})
-        processed[processed.length - 1].type = 'rootInit'
+        let {merged, meta} = this.processCommit(Object.entries(commitGroups), [], {})
+        merged[merged.length - 1].type = 'rootInit'
+        // processed.unshift(uncommittedChanges())
 
-        this.commits = processed
+        this.commits = {merged, tags: Object.values(meta)}
     }
 }
 </script>
