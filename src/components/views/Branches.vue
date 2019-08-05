@@ -10,54 +10,7 @@ import Graph from '../modules/Graph.vue'
 import InformationModal from '../modules/InformationModal.vue'
 import projectsRaw from '../../js/projects.json'
 import experienceRaw from '../../js/experience.json'
-
-const initCommit = (year) => {
-    return {
-        "title": `init ${year}`,
-        "subTitle": "The start of a new year!",
-        "tags": ["Stuff!"],
-        "links": [],
-        "image": "",
-        "description": [],
-        "date": {
-            "start": "",
-            "end": ""
-        },
-        "type": "master",
-    }
-}
-
-const mergeCommit = (year, type, position) => {
-    return {
-        "title": `merge '${type}' at the end of ${year}`,
-        "subTitle": `a good year of ${type}`,
-        "tags": ["Stuff!"],
-        "links": [],
-        "image": "",
-        "description": [],
-        "date": {
-            "start": "",
-            "end": ""
-        },
-        "type": `merge${position}`,
-    }
-}
-
-const uncommittedChanges = () => {
-    return {
-        "title": "uncommitted changes",
-        "subTitle": "",
-        "tags": ["Stuff!"],
-        "links": [],
-        "image": "",
-        "description": [],
-        "date": {
-            "start": "",
-            "end": ""
-        },
-        "type": "master",
-    }
-}
+import {initCommit, mergeCommit, uncommittedChanges} from '../../js/commits'
 
 export default {
     components: {Graph, InformationModal},
