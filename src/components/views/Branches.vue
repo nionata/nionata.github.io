@@ -112,7 +112,7 @@ export default {
         
         // Init commit holders 
         let commitGroups = {}
-        let commits = [...projects, ...experience]
+        const commits = [...projects, ...experience]
 
         // Sort and group commits by year
         commits.sort((a, b) => new Date(a.date.start) - new Date(b.date.start))        
