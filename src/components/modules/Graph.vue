@@ -1,5 +1,5 @@
 <template>
-    <div id="historyContainer">
+    <div id="graph">
             <div id="branchContainer">
                 <div class="branch" v-for="commit in getCommits()" :key="commit.title">
                     <img 
