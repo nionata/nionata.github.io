@@ -3,7 +3,7 @@
         <div id="terminalContainer">
             <div id="terminalHeader">
                 <div id="dotGroup">
-                    <p class="dot" id="dotRed"></p>
+                    <p class="dot" id="dotRed" @click="onSkip"></p>
                     <p class="dot" id="dotYellow"></p>
                     <p class="dot" id="dotGreen"></p>
                 </div>
@@ -31,10 +31,21 @@ export default {
     data() {
         return {
             content: [],
-            line: ''
+            line: '',
+            skip: false,
         }
     },
     methods: {
+        onSkip: function() {
+            if (this.skip) return
+
+            const lastLine = lines.pop()
+            
+            this.content = lines
+            this.line = lastLine
+            this.skip = true
+            this.$emit('onDoneInitializing')
+        },
         isComment: function(line) {
             return line.includes("#")
         },
@@ -42,7 +53,7 @@ export default {
             const lastIndex = lines.length - 1
 
             if(i === lastIndex) {
-                this.line = lines[lastIndex]
+                this.line = lines.pop()
                 this.$emit('onDoneInitializing')
                 return 
             }
@@ -50,6 +61,8 @@ export default {
             this.line = lines[i] 
 
             window.setTimeout(() => {
+                if (this.skip) return
+
                 this.content.push(this.line)
                 this.processLine(i + 1)
             }, this.line.length * charDelay)
