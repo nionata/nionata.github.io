@@ -8,5 +8,6 @@
         <rect id="Rectangle" fill="#FFFFFF" x="22" y="0" width="6" height="46"></rect>
         <circle id="Oval-2" fill="#FFFFFF" cx="25" cy="22.9658749" r="10"></circle>
         <rect id="Rectangle-Copy" fill="#FFFFFF" x="122" y="0" width="6" height="46"></rect>
+        <rect id="Rectangle-Copy-2" fill="#FFFFFF" x="72" y="0" width="6" height="46"></rect>
     </g>
 </svg>
