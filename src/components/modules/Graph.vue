@@ -27,7 +27,7 @@
                     @click="$emit('onCommitClick', commit)"
                     :class="{selectedCommit: selected.title === commit.title}"
                 >
-                    <p class="tag" v-if="commits.tags.includes(index)"><i class="fas fa-code-branch" />{{commit.type}}</p>
+                    <p class="tag" v-if="shouldTag(index)"><i class="fas fa-code-branch" />{{commit.type}}</p>
                     <p class="commitTitle">{{commit.title}}</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@ export default {
         getCommits: function() {
             return this.commits[this.item]
         },
-        getBranchImage(branch, type) {
+        getBranchImage: function(branch, type) {
             switch (type) {
                 case branch:
                     return '/src/images/branchCommit.svg'
@@ -51,7 +51,6 @@ export default {
                     return ''
                 case 'mergeOuter':
                     if (branch === 'master') return '/src/images/outerMerge.svg'
-                    // if (branch === 'projects') return '/src/images/branch.svg'
                     return ''
                 case 'rootInit':
                     if (branch === 'master') return '/src/images/rootCommit.svg' 
@@ -60,6 +59,13 @@ export default {
                     return '/src/images/branch.svg'
             }
         },
+        shouldTag: function(index) {
+            const {tags} = this.commits
+            switch(this.item) {
+                case 'master': return tags.includes(index)
+                default: return index === 0
+            }
+        }
     }
 }
 </script>
