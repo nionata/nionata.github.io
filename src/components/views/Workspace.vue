@@ -2,10 +2,10 @@
     <div id="workspace">
         <div id="terminalContainer">
             <div id="terminalHeader">
-                <div id="dotGroup">
-                    <p class="dot" id="dotRed" @click="onSkip"></p>
-                    <p class="dot" id="dotYellow"></p>
-                    <p class="dot" id="dotGreen"></p>
+                <div id="actionGroup">
+                    <i id="stopAction" class="terminalAction fas fa-stop" title="Stop" @click="onAction('stop')" />
+                    <i id="slowAction" class="terminalAction fas fa-backward" title="Slow down" @click="onAction('slowDown')" />
+                    <i id="speedAction" class="terminalAction fas fa-forward" title="Speed up" @click="onAction('speedUp')" />
                 </div>
                 <p id="terminalTitle">./life_status</p>
             </div>
@@ -23,28 +23,38 @@
 
 <script>
 import terminal from '../../js/terminal.json'
-const {lines, charDelay} = terminal
+let {lines, charDelay, incrementInterval} = terminal
 
 export default {
     components: {},
-    props: ['item'],
+    props: ['item', 'initializing'],
     data() {
         return {
             content: [],
             line: '',
-            skip: false,
+            stop: false,
         }
     },
     methods: {
-        onSkip: function() {
-            if (this.skip) return
+        onAction: function(action) {
+            if (this.stop || !this.initializing) return
 
-            const lastLine = lines.pop()
-            
-            this.content = lines
-            this.line = lastLine
-            this.skip = true
-            this.$emit('onDoneInitializing')
+            switch (action) {
+                case 'stop':
+                    const lastLine = lines.pop()
+
+                    this.content = lines
+                    this.line = lastLine
+                    this.stop = true
+                    this.$emit('onDoneInitializing')
+                    break
+                case 'slowDown':
+                    charDelay += incrementInterval
+                    break
+                case 'speedUp':
+                    charDelay -= incrementInterval
+                    break
+            }
         },
         isComment: function(line) {
             return line.includes("#")
@@ -61,7 +71,7 @@ export default {
             this.line = lines[i] 
 
             window.setTimeout(() => {
-                if (this.skip) return
+                if (this.stop) return
 
                 this.content.push(this.line)
                 this.processLine(i + 1)

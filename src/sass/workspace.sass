@@ -21,24 +21,30 @@
     padding: 0 1em
     background-color: $pronouncedAccent
 
-#dotGroup
+#actionGroup
     flex-grow: 1
     display: flex
 
-.dot
+.terminalAction
     height: 15px
     width: 15px
     border-radius: 50%
     margin-right: 1em
 
-#dotRed
-    background-color: red
-    
-#dotYellow
-    background-color: yellow
+.terminalAction:hover
+    transform: scale(1.15)
 
-#dotGreen
-    background-color: green
+.terminalAction:active
+    transform: scale(1.5)
+
+#stopAction
+    color: red
+    
+#slowAction
+    color: yellow
+
+#speedAction
+    color: green
 
 #terminalTitle
     flex-grow: 1.5

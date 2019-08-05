@@ -23,5 +23,6 @@
         "",
         "Enjoy"
     ],
-    "charDelay": 50
+    "charDelay": 50,
+    "incrementInterval": 10
 }

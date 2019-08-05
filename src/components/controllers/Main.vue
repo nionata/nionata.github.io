@@ -1,6 +1,6 @@
 <template>
     <div id="main" :class="{showBackground: !data.nav.initializing}">
-        <Workspace :item="getNavItem()" v-show="showComponent('workspace')" @onDoneInitializing="onDoneInitializing"/>
+        <Workspace :item="getNavItem()" :initializing="data.nav.initializing" v-show="showComponent('workspace')" @onDoneInitializing="onDoneInitializing"/>
         <Branches :item="getNavItem()" :modal="data.modal" v-show="showComponent('branches')"/>
         <Tags :item="getNavItem()" v-show="showComponent('tags')"/>
         <Remotes :item="getNavItem()" v-show="showComponent('remotes')"/>
