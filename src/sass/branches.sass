@@ -1,3 +1,4 @@
+@import graph 
 @import informationModal
 
 #branches 
@@ -5,62 +6,4 @@
     display: flex
     flex-direction: column
 
-#historyContainer
-    flex-grow: 1
-    display: flex
-    overflow: auto
-    flex-basis: 60vh
-
-#branchContainer  
-    flex-grow: 1
-    flex-basis: 25vw
-    display: flex
-    flex-direction: column
-
-.branch
-    height: 46px
-    display: flex
-
-.masterBranch
-    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg)
-    margin: 0
-    
-.experienceBranch
-    filter: invert(.5) sepia(1) saturate(5) hue-rotate(350deg)
-    margin: 0
-
-.projectsBranch
-    filter: invert(.5) sepia(1) saturate(5) hue-rotate(100deg)
-    margin: 0
-
-#commitContainer
-    flex-grow: 5
-    flex-basis: 75vw
-    display: flex
-    flex-direction: column
-
-.commit
-    padding: 0.5em
-    display: flex
-    flex-basis: 30px
-    flex-shrink: 0
-    align-items: center 
-
-.commit:hover
-    background-color: $subtleAccent
-
-.selectedCommit
-    background-color: $subtleAccent
-
-.tag
-    flex-grow: 1
-    padding: 0.25em
-    margin-right: 1em
-    border-radius: 10px
-    background-color: $pronouncedAccent
-    i
-        margin: 0 1em 0 0.5em
-
-.commitTitle
-    flex-grow: 20
 

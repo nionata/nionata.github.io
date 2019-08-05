@@ -1,46 +1,15 @@
 <template>
     <div id="branches">
-        <div id="historyContainer">
-            <div id="branchContainer">
-                <div class="branch" v-for="commit in getCommits()" :key="commit.title">
-                    <img 
-                        :src="getBranchImage('master', commit.type)"
-                        class="masterBranch"
-                        v-if="item === 'master'"
-                    />
-                    <img 
-                        :src="getBranchImage('projects', commit.type)"
-                        class="projectsBranch"
-                        v-if="item === 'master' || item === 'projects'"
-                    />
-                    <img 
-                        :src="getBranchImage('experience', commit.type)"
-                        class="experienceBranch"
-                        v-if="item === 'master' || item === 'experience'"
-                    />
-                </div>
-            </div>
-            <div id="commitContainer">
-                <div 
-                    class="commit"
-                    v-for="(commit, index) in getCommits()"
-                    :key="commit.title"
-                    @click="onCommitClick(commit)"
-                    :class="{selectedCommit: modal.selected.title === commit.title}"
-                >
-                    <p class="tag" v-if="commits.tags.includes(index)"><i class="fas fa-code-branch" />{{commit.type}}</p>
-                    <p class="commitTitle">{{commit.title}}</p>
-                </div>
-            </div>
-        </div>
+        <Graph :commits="commits" :item="item" :selected="modal.selected" @onCommitClick="onCommitClick($event)"/>
         <informationModal :commit="modal.selected" :enabled="modal.enabled" @onModalClose="onModalClose" />
     </div>
 </template>
 
 <script>
+import Graph from '../modules/Graph.vue'
+import InformationModal from '../modules/InformationModal.vue'
 import projectsRaw from '../../js/projects.json'
 import experienceRaw from '../../js/experience.json'
-import InformationModal from '../modules/InformationModal.vue'
 
 const initCommit = (year) => {
     return {
@@ -91,7 +60,7 @@ const uncommittedChanges = () => {
 }
 
 export default {
-    components: {InformationModal},
+    components: {Graph, InformationModal},
     props: ['modal', 'item'],
     data() {
         return {
@@ -99,33 +68,6 @@ export default {
         }
     },
     methods: {
-        getCommits: function() {
-            switch(this.item) {
-                case 'master':
-                    return this.commits.merged
-                case 'experience':
-                    return this.labelCommits(experienceRaw, 'experience')
-                case 'projects':
-                    return this.labelCommits(projectsRaw, 'projects')
-            }
-        },
-        getBranchImage(branch, type) {
-            switch (type) {
-                case branch:
-                    return '/src/images/branchCommit.svg'
-                case 'rootInit':
-                    if (branch === 'master') return '/src/images/masterBranch.svg' 
-                    return ''
-                default: 
-                    return '/src/images/branch.svg'
-            }
-        },
-        labelCommits: function(commits, type) {
-            return commits.map(commit => {
-                commit.type = type
-                return commit
-            })
-        },
         onCommitClick: function(commit) {
             this.modal.selected = commit
             this.modal.enabled = true
@@ -134,31 +76,45 @@ export default {
             this.modal.enabled = false
             this.modal.selected = ''
         },
-        processCommit: function(commitGroups, merged, meta) {
-            if(!commitGroups.length) return {merged, meta}
+        labelCommits: function(commits, type) {
+            return commits.map(commit => {
+                commit.type = type
+                return commit
+            })
+        },
+        mergeCommits: function(commitGroups, master, meta) {
+            // Base case
+            if(!commitGroups.length) return {master, meta}
             
+            // Get the groups year and corresponding commits
             const [year, commits] = commitGroups.shift()
 
+            // Get the indexes, if any, of the diff commit types
             meta = {
                 projects: commits.findIndex(commit => commit.type === 'projects'),
                 experience: commits.findIndex(commit => commit.type === 'experience'),
                 master: commits.findIndex(commit => commit.type === 'master')
             }
 
-            merged.unshift(...commits)
-            if (meta.projects !== -1 && commitGroups.length) merged.unshift(mergeCommit(year, 'projects', 'Inner'))
-            if (meta.experience !== -1 && commitGroups.length) merged.unshift(mergeCommit(year, 'experience', 'Outer'))
+            // Add commits and add merge commits if applicabled
+            master.unshift(...commits)
+            if (master.projects !== -1 && commitGroups.length) master.unshift(mergeCommit(year, 'projects', 'Inner'))
+            if (master.experience !== -1 && commitGroups.length) master.unshift(mergeCommit(year, 'experience', 'Outer'))
 
-            return this.processCommit(commitGroups, merged, meta)
+            // Recurse
+            return this.mergeCommits(commitGroups, master, meta)
         }
     },
     mounted: function() {
-        const projects = this.labelCommits(projectsRaw, 'projects')
-        const experience = this.labelCommits(experienceRaw, 'experience')
+        // Get the raw commits and label them
+        let projects = this.labelCommits(projectsRaw, 'projects')
+        let experience = this.labelCommits(experienceRaw, 'experience')
         
+        // Init commit holders 
         let commitGroups = {}
         let commits = [...projects, ...experience]
 
+        // Sort and group commits by year
         commits.sort((a, b) => new Date(a.date.start) - new Date(b.date.start))        
         commits.forEach(commit => {
             const year = new Date(commit.date.start).getFullYear()
@@ -170,11 +126,35 @@ export default {
             }
         })
 
-        let {merged, meta} = this.processCommit(Object.entries(commitGroups), [], {})
-        merged[merged.length - 1].type = 'rootInit'
-        // processed.unshift(uncommittedChanges())
+        // Get the master commits
+        let {master, meta} = this.mergeCommits(Object.entries(commitGroups), [], {})
+        const rootCommit = master.pop()
 
-        this.commits = {merged, tags: Object.values(meta)}
+        // Add root to experience
+        experience.push({
+            ...rootCommit,
+            type: 'experience'
+        })
+
+        // Add root to projects
+        projects.push({
+            ...rootCommit,
+            type: 'projects'
+        })
+
+        // Add root to master
+        master.push({
+            ...rootCommit,
+            type: 'rootInit'
+        })
+
+        // Update state
+        this.commits = {
+            experience,
+            projects,
+            master, 
+            tags: Object.values(meta)
+        }
     }
 }
 </script>
