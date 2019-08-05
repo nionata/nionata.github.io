@@ -46,15 +46,15 @@ export default {
                 case branch:
                     return '/src/images/branchCommit.svg'
                 case 'mergeInner':
-                    if (branch === 'master') return '/src/images/innerMergeMiddle.svg'
+                    if (branch === 'master') return '/src/images/innerMerge.svg'
                     if (branch === 'experience') return '/src/images/branch.svg'
                     return ''
                 case 'mergeOuter':
-                    if (branch === 'master') return '/src/images/outerMergeMiddle.svg'
+                    if (branch === 'master') return '/src/images/outerMerge.svg'
                     // if (branch === 'projects') return '/src/images/branch.svg'
                     return ''
                 case 'rootInit':
-                    if (branch === 'master') return '/src/images/masterBranch.svg' 
+                    if (branch === 'master') return '/src/images/rootCommit.svg' 
                     return ''
                 default: 
                     return '/src/images/branch.svg'
