@@ -45,5 +45,20 @@ module.exports = {
             },
             "type": "master",
         }
+    },
+    initRepo: () => {
+        return {
+            "title": "init master",
+            "subTitle": "",
+            "tags": ["Stuff!"],
+            "links": [],
+            "image": "",
+            "description": [],
+            "date": {
+                "start": "",
+                "end": ""
+            },
+            "type": "master",
+        }
     }
 }

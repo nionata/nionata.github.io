@@ -10,7 +10,7 @@ import Graph from '../modules/Graph.vue'
 import InformationModal from '../modules/InformationModal.vue'
 import projectsRaw from '../../js/projects.json'
 import experienceRaw from '../../js/experience.json'
-import {initCommit, mergeCommit, uncommittedChanges} from '../../js/commits'
+import {initCommit, mergeCommit, uncommittedChanges, initRepo} from '../../js/commits'
 
 export default {
     components: {Graph, InformationModal},
@@ -81,7 +81,7 @@ export default {
 
         // Get the master commits
         let {master, meta} = this.mergeCommits(Object.entries(commitGroups), [], {})
-        const rootCommit = master.pop()
+        const rootCommit = initRepo()
 
         // Add root to experience
         experience.push({
