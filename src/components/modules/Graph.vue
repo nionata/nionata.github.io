@@ -39,7 +39,8 @@ export default {
     props: ['commits', 'item', 'selected'],
     methods: {
         getCommits: function() {
-            return this.commits[this.item]
+            // Get rid of merge commits for now 
+            return this.commits[this.item].filter(commit => !commit.type.includes('merge'))
         },
         getBranchImage: function(branch, type) {
             switch (type) {
