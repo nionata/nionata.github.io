@@ -6,11 +6,11 @@
                 <p>{{commit.subTitle}}</p>
                 <p v-if="commit.date">{{commit.date.start}} - {{commit.date.end}}</p>
             </div>
-            <div id="linksContainer">
-                <a class="link" target="_blank" v-for="link in commit.links" :key="link.link" :href="link.link">{{link.type}}</a>
-            </div>
             <div id="tagsContainer">
                 <p class="tag" v-for="tag in commit.tags" :key="tag">{{tag}}</p>
+            </div>
+            <div id="linksContainer">
+                <a class="link" target="_blank" v-for="link in commit.links" :key="link.link" :href="link.link">{{link.type}}</a>
             </div>
         </div>
         <div id="modalRight">
