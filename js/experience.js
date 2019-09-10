@@ -11,7 +11,7 @@ var experience = [
     links: [
       {
         type: "Website",
-        link: "http://www.streammonkey.com/"
+        link: "https://www.streammonkey.com/"
       },
       {
         type: "Blog",
@@ -35,7 +35,7 @@ var experience = [
         link: "https://www.raymondjames.com/"
       }
     ],
-    image: "http://www.raymondjames.com/freestone/images/aboutus_banner.png"
+    image: "https://www.raymondjames.com/freestone/images/aboutus_banner.png"
   },
   {
     name: "Scanned",
@@ -73,7 +73,7 @@ var experience = [
         link: "https://www.lockheedmartin.com/us.html"
       }
     ],
-    image: "http://aeroengineer.org/wp-content/uploads/2016/11/LOCKHEED.png"
+    image: "https://aeroengineer.org/wp-content/uploads/2016/11/LOCKHEED.png"
   },
   
 ]
