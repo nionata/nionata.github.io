@@ -3,7 +3,7 @@
 module.exports = {
     initCommit: (year) => {
         return {
-            "title": `init ${year}`,
+            "title": `${year}`,
             "description": [],
             "type": "master",
         }
