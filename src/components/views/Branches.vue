@@ -14,9 +14,13 @@ import {initCommit, mergeCommit, uncommittedChanges, initRepo} from '../../js/co
 
 export default {
     components: {Graph, InformationModal},
-    props: ['modal', 'item'],
+    props: ['item'],
     data() {
         return {
+            modal: {
+                enabled: false,
+                selected: ''
+            },
             commits: []
         }
     },

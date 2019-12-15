@@ -1,7 +1,7 @@
 <template>
-    <div id="main" :class="{showBackground: !data.nav.initializing}">
-        <Workspace :item="getNavItem()" :initializing="data.nav.initializing" v-show="showComponent('workspace')" @onDoneInitializing="onDoneInitializing"/>
-        <Branches :item="getNavItem()" :modal="data.modal" v-show="showComponent('branches')"/>
+    <div id="main" :class="{showBackground: !nav.initializing}">
+        <Workspace :item="getNavItem()" :initializing="nav.initializing" v-show="showComponent('workspace')" @onDoneInitializing="onDoneInitializing"/>
+        <Branches :item="getNavItem()" v-show="showComponent('branches')"/>
         <Tags :item="getNavItem()" v-show="showComponent('tags')"/>
         <Remotes :item="getNavItem()" v-show="showComponent('remotes')"/>
     </div>
@@ -15,17 +15,17 @@ import Remotes from '../views/Remotes.vue'
 
 export default {
     components: {Workspace, Branches, Tags, Remotes},
-    props: ['data'],
+    props: ['nav'],
     methods: {
         onDoneInitializing: function() {
             this.$emit('onNavToggle')
-            this.data.nav.initializing = false
+            this.nav.initializing = false
         },
         getNavGroup: function() {
-            return this.data.nav.selected.split('.')[0]
+            return this.nav.selected.split('.')[0]
         },
         getNavItem: function() {
-            return this.data.nav.selected.split('.')[1]
+            return this.nav.selected.split('.')[1]
         },
         showComponent: function(component) {
             return component === this.getNavGroup()
