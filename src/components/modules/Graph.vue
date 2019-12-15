@@ -28,7 +28,14 @@
                     :class="{selectedCommit: selected.title === commit.title}"
                 >
                     <p class="tag" v-if="shouldTag(index)"><i class="fas fa-code-branch" />{{commit.type}}</p>
-                    <p class="commitTitle">{{commit.title}}</p>
+                    <p 
+                        class="commitTitle" 
+                        :class="{commitYear: commit.type === 'master'}"
+                    >
+                        {{commit.title}}
+                        <span v-if="commit.type === 'experience'">, {{commit.subTitle}}</span>
+                    </p>
+                    <!-- <p class="commitYear" v-if="commit.date && commit.date.start">{{commit.date.start}}</p> -->
                 </div>
             </div>
         </div>
@@ -40,7 +47,7 @@ export default {
     methods: {
         getCommits: function() {
             // Get rid of merge commits for now 
-            return this.commits[this.item].filter(commit => !commit.type.includes('merge'))
+            if (this.commits[this.item]) return this.commits[this.item].filter(commit => !commit.type.includes('merge'))
             // return this.commits[this.item]
         },
         getBranchImage: function(branch, type) {
