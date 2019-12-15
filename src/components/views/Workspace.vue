@@ -41,12 +41,8 @@ export default {
 
             switch (action) {
                 case 'stop':
-                    const lastLine = lines.pop()
-
-                    this.content = lines
-                    this.line = lastLine
                     this.stop = true
-                    this.$emit('onDoneInitializing')
+                    this.onFinish()
                     break
                 case 'slowDown':
                     charDelay += incrementInterval
@@ -63,8 +59,7 @@ export default {
             const lastIndex = lines.length - 1
 
             if(i === lastIndex) {
-                this.line = lines.pop()
-                this.$emit('onDoneInitializing')
+                this.onFinish()
                 return 
             }
 
@@ -76,6 +71,11 @@ export default {
                 this.content.push(this.line)
                 this.processLine(i + 1)
             }, this.line.length * charDelay)
+        },
+        onFinish: function() {
+            this.line = lines.pop()
+            this.content = lines
+            this.$emit('onDoneInitializing')
         }
     },
     mounted: function() {
