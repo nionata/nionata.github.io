@@ -25,7 +25,7 @@
   {
     "title": "Danger.ai",
     "subTitle": "A video monitoring system powered by deep learning.",
-    "tags": ["Python", "Flask", "React.js", "NoSQL", "Serverless", "Google Cloud Platform"],
+    "tags": ["Python", "Flask", "ReactJS", "NoSQL", "Serverless", "Google Cloud Platform"],
     "links": [
       {
         "type": "Devpost",
@@ -48,7 +48,7 @@
   {
     "title": "SpatialVR",
     "subTitle": "A VR experience and fullstack web app for helping people with spatial hearing disorders.",
-    "tags": ["React.js", "Node.js", "MongoDB"],
+    "tags": ["ReactJS", "NodeJS", "MongoDB"],
     "link": [
       {
         "type": "Devpost",
@@ -71,7 +71,7 @@
   {
     "title": "Friendcation",
     "subTitle": "The easiest and most economical way to plan a vacation with a group of distant friends.",
-    "tags": ["React.js", "Firebase", "Amadeus Travel API"],
+    "tags": ["ReactJS", "Firebase", "Amadeus Travel API"],
     "links": [
       {
         "type": "Devpost",
@@ -94,7 +94,7 @@
   {
     "title": "Big Brother Experience",
     "subTitle": "Big Brother tests your knowledge of the book 1984 through an interactive quiz.",
-    "tags": ["React.js", "Heroku"],
+    "tags": ["ReactJS", "Heroku"],
     "links": [
       {
         "type": "Github",
@@ -113,7 +113,7 @@
   {
     "title": "Sundial",
     "subTitle": "Find ideal meeting times across multiple time zones.",
-    "tags": ["React.js", "Heroku", "Firebase"],
+    "tags": ["ReactJS", "Heroku", "Firebase"],
     "links": [
       {
         "type": "Website",

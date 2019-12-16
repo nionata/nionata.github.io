@@ -12,7 +12,7 @@
     {
         "icon": "fa-tag",
         "title": "tags",
-        "items": ["languages", "tools", "technologies"]
+        "items": ["languages", "technologies", "tools", "concepts"]
     },
     {
         "icon": "fa-tag",
