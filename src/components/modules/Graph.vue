@@ -19,9 +19,9 @@
                     />
                 </div>
             </div>
-            <div id="commitContainer">
+            <div id="commitsContainer">
                 <div 
-                    class="commit"
+                    class="commitContainer"
                     v-for="(commit, index) in getCommits()"
                     :key="commit.title"
                     @click="$emit('onCommitClick', commit)"
