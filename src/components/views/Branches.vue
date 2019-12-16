@@ -49,7 +49,7 @@ export default {
             meta = {
                 projects: commits.findIndex(commit => commit.type === 'projects'),
                 experience: commits.findIndex(commit => commit.type === 'experience'),
-                master: commits.findIndex(commit => commit.type === 'master')
+                // master: commits.findIndex(commit => commit.type === 'master') // Removed bc we don't need master branch
             }
 
             // Add commits and add merge commits if applicabled

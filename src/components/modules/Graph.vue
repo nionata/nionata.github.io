@@ -2,11 +2,14 @@
     <div id="graph">
             <div id="branchContainer">
                 <div class="branch" v-for="commit in getCommits()" :key="commit.title">
-                    <img 
-                        :src="getBranchImage('master', commit.type)"
-                        class="masterBranch"
-                        v-if="item === 'master'"
-                    />
+                    <div class="masterRow">
+                        <p v-if="commit.type === 'master'">{{commit.title}}</p>
+                        <img 
+                            :src="getBranchImage('master', commit.type)"
+                            class="masterBranch"
+                            v-if="item === 'master'"
+                        />
+                    </div>
                     <img 
                         :src="getBranchImage('projects', commit.type)"
                         class="projectsBranch"
@@ -28,10 +31,7 @@
                     :class="{selectedCommit: selected.title === commit.title}"
                 >
                     <p class="tag" v-if="shouldTag(index)"><i class="fas fa-code-branch" />{{commit.type}}</p>
-                    <p 
-                        class="commitTitle" 
-                        :class="{commitYear: commit.type === 'master'}"
-                    >
+                    <p class="commitTitle" v-if="commit.type !== 'master'">
                         {{commit.title}}
                         <span v-if="commit.type === 'experience'">, {{commit.subTitle}}</span>
                     </p>
