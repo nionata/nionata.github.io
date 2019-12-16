@@ -1,0 +1,47 @@
+{
+    "languages": [
+        "Java",
+        "JavaScript",
+        "Python",
+        "Swift", 
+        "VBA",
+        "HTML",
+        "CSS"
+    ],
+    "technologies": [
+        "NodeJS",
+        "PostgreSQL",
+        "Flask",
+        "ReactJS",
+        "MongoDB",
+        "CraftBukkit",
+        "MySQL",
+        "Spring",
+        "OracleDB",
+        "React Native"
+    ],
+    "tools": [
+        "Heroku",
+        "Google Cloud Platform",
+        "Firebase",
+        "Amadeus Travel API",
+        "Illustrator",
+        "Illustrator", 
+        "Photoshop", 
+        "Premiere",
+        "Excel",
+        "AWS",
+        "Lambda", 
+        "DynamoDB", 
+        "S3", 
+        "Elasticsearch"
+    ],
+    "concepts": [
+        "CI/CD",
+        "Agile",
+        "Serverless",
+        "NoSQL",
+        "Enterprise Services",
+        "Data Analysis"
+    ]
+}
