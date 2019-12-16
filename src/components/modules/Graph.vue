@@ -40,7 +40,7 @@ export default {
     methods: {
         getCommits: function() {
             // Get rid of merge commits for now 
-            return this.commits[this.item].filter(commit => !commit.type.includes('merge'))
+            if (this.commits[this.item]) return this.commits[this.item].filter(commit => !commit.type.includes('merge'))
             // return this.commits[this.item]
         },
         getBranchImage: function(branch, type) {
