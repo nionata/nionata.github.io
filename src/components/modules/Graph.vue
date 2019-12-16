@@ -35,7 +35,6 @@
                         {{commit.title}}
                         <span v-if="commit.type === 'experience'">, {{commit.subTitle}}</span>
                     </p>
-                    <!-- <p class="commitYear" v-if="commit.date && commit.date.start">{{commit.date.start}}</p> -->
                 </div>
             </div>
         </div>
