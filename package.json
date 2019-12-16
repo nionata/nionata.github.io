@@ -35,5 +35,7 @@
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "cytoscape": "^3.12.1"
+  }
 }
