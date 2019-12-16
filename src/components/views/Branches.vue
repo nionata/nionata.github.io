@@ -22,6 +22,9 @@ export default {
     },
     methods: {
         onCommitClick: function(commit) {
+            let type = commit.type
+            if (type === 'master') return
+
             this.modal.selected = commit
             this.modal.enabled = true
         },
@@ -84,22 +87,22 @@ export default {
         const rootCommit = initRepo()
 
         // Add root to experience
-        experience.push({
-            ...rootCommit,
-            type: 'experience'
-        })
+        // experience.push({
+        //     ...rootCommit,
+        //     type: 'experience'
+        // })
 
         // Add root to projects
-        projects.push({
-            ...rootCommit,
-            type: 'projects'
-        })
+        // projects.push({
+        //     ...rootCommit,
+        //     type: 'projects'
+        // })
 
         // Add root to master
-        master.push({
-            ...rootCommit,
-            type: 'rootInit'
-        })
+        // master.push({
+        //     ...rootCommit,
+        //     type: 'rootInit'
+        // })
 
         // Update state
         this.commits = {
