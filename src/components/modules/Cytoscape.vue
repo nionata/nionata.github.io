@@ -47,18 +47,23 @@ export default {
                 style: [
                     {
                         selector: 'node',
-                            style: {
-                                'background-color': '#666',
-                                'label': 'data(id)',
-                                'color': 'white'
-                            }
+                        style: {
+                            'label': 'data(id)',
+                            'color': 'white',
+                        }
+                    },
+                    {
+                        selector: '.item',
+                        style: {
+                            'background-color': '#666',
+                            "text-valign": "bottom",
+                            "text-halign": "center"
+                        }
                     },
                     {
                         selector: '.tag',
                         style: {
-                            'background-color': 'red',
-                            'label': 'data(id)',
-                            'color': 'white'
+                            'background-color': '#008FFE',
                         }
                     },
                     {
@@ -66,18 +71,18 @@ export default {
                         style: {
                             'width': 3,
                             'line-color': '#ccc',
-                            'target-arrow-color': '#ccc',
                             'target-arrow-shape': 'triangle'
                         }
                     }
                 ],
                 layout: {
-                    name: 'cose',
-                    animate: true,
+                    name: 'breadthfirst',
                     fit: true,
                     padding: 30,
-                    nodeRepulsion: function( node ){ return 500000; },
-                    componentSpacing: 40
+                    animate: true,
+                    maximal: true,
+                    grid: false,
+                    directed: true
                 }
             })
             
