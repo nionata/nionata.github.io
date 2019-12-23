@@ -1,53 +1,18 @@
 <template>
     <div id="graph">
-            <div id="branchContainer">
-                <div class="branch" v-for="commit in getCommits()" :key="commit.title">
-                    <div class="masterRow">
-                        <p v-if="commit.type === 'master'">{{commit.title}}</p>
-                        <img 
-                            :src="getBranchImage('master', commit.type)"
-                            class="masterBranch"
-                            v-if="item === 'master'"
-                        />
-                    </div>
-                    <img 
-                        :src="getBranchImage('projects', commit.type)"
-                        class="projectsBranch"
-                        v-if="item === 'master' || item === 'projects'"
-                    />
-                    <img 
-                        :src="getBranchImage('experience', commit.type)"
-                        class="experienceBranch"
-                        v-if="item === 'master' || item === 'experience'"
-                    />
-                </div>
-            </div>
-            <div id="commitsContainer">
-                <div 
-                    class="commitContainer"
-                    v-for="(commit, index) in getCommits()"
-                    :key="commit.title"
-                    @click="$emit('onCommitClick', commit)"
-                    :class="{selectedCommit: selected.title === commit.title}"
-                >
-                    <p class="tag" v-if="shouldTag(index)"><i class="fas fa-code-branch" />{{commit.type}}</p>
-                    <p class="commitTitle" v-if="commit.type !== 'master'">
-                        {{commit.title}}
-                        <span v-if="commit.type === 'experience'">, {{commit.subTitle}}</span>
-                    </p>
-                </div>
-            </div>
-        </div>
+        <Commit :commit="commit" v-for="commit in getCommits(item)" :key="commit.title" />
+    </div>
 </template>
 
 <script>
+import Commit from './Commit.vue'
+
 export default {
+    components: {Commit},
     props: ['commits', 'item', 'selected'],
     methods: {
-        getCommits: function() {
-            // Get rid of merge commits for now 
-            if (this.commits[this.item]) return this.commits[this.item].filter(commit => !commit.type.includes('merge'))
-            // return this.commits[this.item]
+        getCommits: function(selector) {
+            return this.commits.filter(commit => selector === this.item || selector === 'master')
         },
         getBranchImage: function(branch, type) {
             switch (type) {
@@ -68,7 +33,8 @@ export default {
             }
         },
         shouldTag: function(index) {
-            const {tags} = this.commits
+            // const {tags} = this.commits
+            const tags = []
             switch(this.item) {
                 case 'master': return tags.includes(index)
                 default: return index === 0

@@ -1,0 +1,70 @@
+.commit
+    display: flex
+
+.commitContainer
+    padding: 0.5em
+    flex-basis: 30px
+    flex-shrink: 0
+    align-items: center 
+    flex-basis: 80vw
+
+#branchContainer  
+    flex-grow: 1
+    flex-basis: 20vw
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.branch
+    height: 46px
+    display: flex
+
+.masterRow
+    flex: 1
+    width: 10vw
+    flex-basis: 10vw
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+.masterBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg)
+    margin: 0
+    
+.experienceBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(350deg)
+    margin: 0
+
+.projectsBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(100deg)
+    margin: 0
+
+#commitsContainer
+    flex-grow: 5
+    flex-basis: 80vw
+    display: flex
+    flex-direction: column
+
+
+.commitContainer:hover
+    background-color: $subtleAccent
+
+.selectedCommit
+    background-color: $subtleAccent
+
+.tag
+    flex-grow: 1
+    padding: 0.25em
+    margin-right: 1em
+    border-radius: 10px
+    background-color: $pronouncedAccent
+    i
+        margin: 0 1em 0 0.5em
+
+.commitTitle
+    flex-grow: 20
+
+.commitYear
+    flex-grow: 20
+    text-align: right
+    padding-right: 0.5em

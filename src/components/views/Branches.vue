@@ -17,7 +17,7 @@ export default {
     props: ['modal', 'item'],
     data() {
         return {
-            commits: {}
+            commits: []
         }
     },
     methods: {
