@@ -12,7 +12,11 @@ export default {
     props: ['commits', 'item', 'selected'],
     methods: {
         getCommits: function(selector) {
-            return this.commits.filter(commit => selector === this.item || selector === 'master')
+            if (selector === 'master') {
+                return this.commits
+            }
+
+            return this.commits.filter(commit => (commit.type === selector || commit.type === 'master'))
         },
         getBranchImage: function(branch, type) {
             switch (type) {

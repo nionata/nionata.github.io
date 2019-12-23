@@ -1,13 +1,11 @@
 <template>
     <div class="commit">
-        <div 
-            class="commitContainer"
-            :key="commit.title"
-        >
+        <div class="branchContainer">
+        </div>
+        <div class="commitContainer" :key="commit.title">
             <!-- <p class="tag" v-if="shouldTag(index)"><i class="fas fa-code-branch" />{{commit.type}}</p> -->
             <p class="commitTitle" v-if="commit.type !== 'master'">
                 {{commit.title}}
-                <span v-if="commit.type === 'experience'">, {{commit.subTitle}}</span>
             </p>
         </div>
     </div>
