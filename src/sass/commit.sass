@@ -1,17 +1,45 @@
 .commit
     display: flex
-    flex-basis: 46px
+    flex-shrink: 0
+    align-items: center
+
+.selectedCommit
+    background-color: $subtleAccent
+
+.dateContainer
+    flex-grow: 1
+    flex-basis: 10%
+    text-align: right
+
+.date
+    
 
 .branchContainer
     flex-grow: 1
-    flex-basis: 20%
+    height: 46px
+    display: flex
+    justify-content: left
 
-.commitContainer
-    flex-grow: 5
-    flex-basis: 80%
-    flex-shrink: 0
-    padding: 0.5em
+.masterBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg)
+    margin: 0
+    
+.experienceBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(350deg)
+    margin: 0
 
-.commitContainer:hover
+.projectsBranch
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(100deg)
+    margin: 0
+
+.messageContainer
+    flex-grow: 1
+    flex-basis: 65vw
+    display: flex
+    align-items: center
+    height: 46px
+    padding-left: 0.5em
+
+.titleMessage:hover
     background-color: $subtleAccent
 
