@@ -1,6 +1,13 @@
 <template>
     <div id="graph">
-        <Commit :commit="commit" v-for="commit in getCommits(item)" :key="commit.title" />
+        <Commit 
+            :commit="commit" 
+            :branches="getBranchImages(commit.type)" 
+            :tag="shouldTag(commit.type, index)" 
+            :selected="commit.title === selected.title"
+            :key="commit.title"
+            @onClick="onCommitClick($event)" 
+            v-for="(commit, index) in getCommits(item)" />
     </div>
 </template>
 
@@ -19,30 +26,30 @@ export default {
             return this.commits.filter(commit => (commit.type === selector || commit.type === 'master'))
         },
         getBranchImage: function(branch, type) {
-            switch (type) {
-                case branch:
-                    return '/src/images/branchCommit.svg'
-                case 'mergeInner':
-                    if (branch === 'master') return '/src/images/innerMerge.svg'
-                    if (branch === 'experience') return '/src/images/branch.svg'
-                    return ''
-                case 'mergeOuter':
-                    if (branch === 'master') return '/src/images/outerMerge.svg'
-                    return ''
-                case 'rootInit':
-                    if (branch === 'master') return '/src/images/rootCommit.svg' 
-                    return ''
-                default: 
-                    return '/src/images/branch.svg'
+            if (type === branch) {
+                return '/src/images/branchCommit.svg'
             }
+
+            return '/src/images/branch.svg'
         },
-        shouldTag: function(index) {
-            // const {tags} = this.commits
-            const tags = []
-            switch(this.item) {
-                case 'master': return tags.includes(index)
-                default: return index === 0
-            }
+        getBranchImages: function(type) {
+            let branches = ['master', 'projects', 'experience']
+
+            return branches.filter(branch => {
+                    if (this.item === 'master' || branch === 'master') return true
+                    if (this.item === branch) return true
+                }).map(branch => {
+                    return {
+                        class: `${branch}Branch`,
+                        img: this.getBranchImage(branch, type)
+                    }
+                })
+        },
+        shouldTag: function(type, index) {
+            return index === this.getCommits(this.item)
+        },
+        onCommitClick: function(commit) {
+            if (commit.type !== 'master') this.$emit('onCommitClick', commit)
         }
     }
 }
