@@ -46,7 +46,9 @@ export default {
                 })
         },
         shouldTag: function(type, index) {
-            return index === this.getCommits(this.item)
+            console.log(this.getCommits(this.item).findIndex(commit => commit.type === type));
+            
+            return index === this.getCommits(this.item).findIndex(commit => commit.type === type)
         },
         onCommitClick: function(commit) {
             if (commit.type !== 'master') this.$emit('onCommitClick', commit)

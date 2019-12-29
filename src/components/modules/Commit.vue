@@ -15,6 +15,6 @@
 
 <script>
 export default {
-    props: ['commit', 'branches', 'selected'],
+    props: ['commit', 'branches', 'selected', 'tag'],
 }
 </script>
