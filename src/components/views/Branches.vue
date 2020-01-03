@@ -22,6 +22,9 @@ export default {
     },
     methods: {
         onCommitClick: function(commit) {
+            let type = commit.type
+            if (type === 'master') return
+
             this.modal.selected = commit
             this.modal.enabled = true
         },
@@ -35,79 +38,34 @@ export default {
                 return commit
             })
         },
-        mergeCommits: function(commitGroups, master, meta) {
-            // Base case
-            if(!commitGroups.length) return {master, meta}
-            
-            // Get the groups year and corresponding commits
-            const [year, commits] = commitGroups.shift()
+        addYears: function(commits) {
+            let yearsIndex = {}
+            let tags = []
+            const len = commits.length
 
-            // Get the indexes, if any, of the diff commit types
-            meta = {
-                projects: commits.findIndex(commit => commit.type === 'projects'),
-                experience: commits.findIndex(commit => commit.type === 'experience'),
-                master: commits.findIndex(commit => commit.type === 'master')
+            commits.sort((a, b) => new Date(b.date.start) - new Date(a.date.start)) 
+            for (let i = 0; i < len; i++) {
+                let curr = commits.pop()
+                const year = new Date(curr.date.start).getFullYear()
+
+                if (!yearsIndex[year]) {
+                    yearsIndex[year] = true 
+                    commits.unshift(initCommit(year))
+                }
+                
+                commits.unshift(curr)
             }
 
-            // Add commits and add merge commits if applicabled
-            master.unshift(...commits)
-            if (master.projects !== -1 && commitGroups.length) master.unshift(mergeCommit(year, 'projects', 'Inner'))
-            if (master.experience !== -1 && commitGroups.length) master.unshift(mergeCommit(year, 'experience', 'Outer'))
-
-            // Recurse
-            return this.mergeCommits(commitGroups, master, meta)
+            return commits
         }
     },
     mounted: function() {
         // Get the raw commits and label them
         let projects = this.labelCommits(projectsRaw, 'projects')
         let experience = this.labelCommits(experienceRaw, 'experience')
-        
-        // Init commit holders 
-        let commitGroups = {}
-        const commits = [...projects, ...experience]
-
-        // Sort and group commits by year
-        commits.sort((a, b) => new Date(a.date.start) - new Date(b.date.start))        
-        commits.forEach(commit => {
-            const year = new Date(commit.date.start).getFullYear()
-
-            if (commitGroups[year]) {
-                commitGroups[year].unshift(commit)
-            } else {
-                commitGroups[year] = [commit, initCommit(year)]
-            }
-        })
-
-        // Get the master commits
-        let {master, meta} = this.mergeCommits(Object.entries(commitGroups), [], {})
-        const rootCommit = initRepo()
-
-        // Add root to experience
-        experience.push({
-            ...rootCommit,
-            type: 'experience'
-        })
-
-        // Add root to projects
-        projects.push({
-            ...rootCommit,
-            type: 'projects'
-        })
-
-        // Add root to master
-        master.push({
-            ...rootCommit,
-            type: 'rootInit'
-        })
 
         // Update state
-        this.commits = {
-            experience,
-            projects,
-            master, 
-            tags: Object.values(meta)
-        }
+        this.commits = this.addYears([...projects, ...experience])
     }
 }
 </script>
