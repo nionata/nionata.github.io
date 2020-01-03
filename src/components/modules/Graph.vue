@@ -46,8 +46,6 @@ export default {
                 })
         },
         shouldTag: function(type, index) {
-            console.log(this.getCommits(this.item).findIndex(commit => commit.type === type));
-            
             return index === this.getCommits(this.item).findIndex(commit => commit.type === type)
         },
         onCommitClick: function(commit) {
