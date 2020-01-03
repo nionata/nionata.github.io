@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <SideNav :nav="data.nav" @navSelect="onNavSelect($event)" @onNavToggle="onNavToggle"/>
-    <Main :data="data" @onNavToggle="onNavToggle"/>
+    <SideNav :nav="nav" @navSelect="onNavSelect($event)" @onNavToggle="onNavToggle"/>
+    <Main :nav="nav" @onNavToggle="onNavToggle"/>
   </div>
 </template>
 
@@ -14,25 +14,19 @@ export default {
     components: {SideNav, Main},
     data() {
         return {
-            data: {
-                modal: {
-                    enabled: false,
-                    selected: ''
-                },
-                nav: {
-                    selected: 'workspace.Life Status',
-                    show: false,
-                    initializing: true
-                }
+            nav: {
+                selected: 'workspace.Life Status',
+                show: false,
+                initializing: true
             }
         }
     },
     methods: {
         onNavSelect: function(navItem) {
-            this.data.nav.selected = navItem
+            this.nav.selected = navItem
         },
         onNavToggle: function() {
-            this.data.nav.show = !this.data.nav.show
+            this.nav.show = !this.nav.show
         }
     }
 }
