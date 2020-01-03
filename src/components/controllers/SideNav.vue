@@ -20,7 +20,7 @@
             <div id="linkGroup" class="footerSection">
                 <a href="https://github.com/nionata" target="_blank"><i class="fab fa-github fa-2x"></i></a>
                 <!--<a href="mailto:nionata@ufl.edu" target="_blank"><i class="far fa-envelope fa-2x"></i></a>-->
-                <a href="/bin/archived/resume.pdf" target="_blank"><i class="far fa-file-alt fa-2x"></i></a>
+                <a href="/bin/resume.pdf" target="_blank"><i class="far fa-file-alt fa-2x"></i></a>
                 <a href="https://www.linkedin.com/in/nionata/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a>
             </div>
             <p href="bin/archived/index.html" class="footerSection">nicholas-ionata (Git)</p>
