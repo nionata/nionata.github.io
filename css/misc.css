@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
 
-.primary-color { background: #005280; } /* Nick Blue */
-.secondary-color { background: #47C682; }
-
 h1,h2 {
   font-family: 'Roboto', sans-serif;
   color: #FFFFFF;
@@ -261,11 +258,11 @@ form {
   background-color: #005280;
 }
 
-.dark-primary-color    { background: #0097A7; }
+/* .dark-primary-color    { background: #0097A7; }
 .default-primary-color { background: #00BCD4; }
 .light-primary-color   { background: #B2EBF2; }
 .text-primary-color    { color: #FFFFFF; }
 .accent-color          { background: #FF5252; }
 .primary-text-color    { color: #212121; }
 .secondary-text-color  { color: #757575; }
-.divider-color         { border-color: #BDBDBD; }
+.divider-color         { border-color: #BDBDBD; } */
