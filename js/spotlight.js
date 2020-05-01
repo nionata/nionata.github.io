@@ -9,11 +9,13 @@ var spotlight = [
   },
   {
     name: "raymondjames",
-    link: "https://stpeteedc.com/wp-content/uploads/2018/03/raymond-james.png"
+    link: "images/rj.png"
+    // link: "https://stpeteedc.com/wp-content/uploads/2018/03/raymond-james.png"
   },
   {
     name: "lockheedmartin",
-    link: "https://gateway.foresee.com/sites/lockheed-martin/production/trigger/LM_mobile.jpg"
+    link: "images/lm.png"
+    // link: "https://gateway.foresee.com/sites/lockheed-martin/production/trigger/LM_mobile.jpg"
   },
   {
     name: "swamphacks",
@@ -21,6 +23,7 @@ var spotlight = [
   },
   {
     name: "scanned",
-    link: "https://nicholasionata.com/Scanned-Website/images/logo.png"
+    link: "images/sa.png"
+    // link: "https://nicholasionata.com/Scanned-Website/images/logo.png"
   }
 ]
