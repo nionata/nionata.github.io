@@ -1,13 +1,7 @@
-$(function() {
-  var app = new Vue({
-    el: "#app",
-    data: {
-      "projects": projects,
-      "experience": experience
-    }
-  })
-})
+// Vue functions
+$(initVue)
 
+// Hide nav bar at start
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
   if (scroll != 0) {
@@ -19,6 +13,7 @@ $(window).scroll(function() {
   }
 });
 
+// Smooth scroll
 $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
