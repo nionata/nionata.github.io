@@ -73,7 +73,7 @@ var experience = [
         link: "https://www.lockheedmartin.com/us.html"
       }
     ],
-    image: "https://aeroengineer.org/wp-content/uploads/2016/11/LOCKHEED.png"
+    image: "https://www.lockheedmartin.com/content/dam/lockheed-martin/general/LM_logo_grey.svg"
   },
   
 ]
