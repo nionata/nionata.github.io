@@ -10,9 +10,6 @@ body
 * 
   box-sizing: border-box
 
-h1 
-  color: $dark
-
 .container 
   padding: 2.5vh 7vw 2.5vh 7vw
 
@@ -22,6 +19,10 @@ h1
   align-items: center
   justify-content: space-between
   padding: 2.5vh 7vw 2.5vh 7vw
+
+.rowNarrow
+  @extend .row
+  padding: 2.5vh 0 2.5vh 0 
 
 .col 
   display: flex
@@ -33,11 +34,11 @@ h1
 .item 
   flex: 1
 
-.align-right 
-  text-align: right
+h2
+  margin-bottom: 0
 
-.align-left 
-  text-align: left
+.primary
+  color: $primary
 
 .fade-enter-active, .fade-leave-active 
   transition: opacity 0.5s
