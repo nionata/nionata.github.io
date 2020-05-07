@@ -1,29 +1,26 @@
 export default [
   {
-    name: "visa",
-    link: "https://cdn.visa.com/cdn/assets/images/logos/visa/logo.png"
+    name: 'visa',
+    link: 'visa.png'
   },
   {
-    name: "streammonkey",
-    link: "https://static.streammonkey.com/dist/images/logo.svg"
+    name: 'streammonkey',
+    link: 'sm.svg'
   },
   {
-    name: "raymondjames",
-    link: "images/rj.png"
-    // link: "https://stpeteedc.com/wp-content/uploads/2018/03/raymond-james.png"
+    name: 'raymondjames',
+    link: 'rj.png'
   },
   {
-    name: "lockheedmartin",
-    link: "images/lm.png"
-    // link: "https://gateway.foresee.com/sites/lockheed-martin/production/trigger/LM_mobile.jpg"
+    name: 'lockheedmartin',
+    link: 'lm.png'
   },
   {
-    name: "swamphacks",
-    link: "https://2019.swamphacks.com/assets/mainpage/white_logo.png"
+    name: 'swamphacks',
+    link: 'sh.png'
   },
   {
-    name: "scanned",
-    link: "images/sa.png"
-    // link: "https://nicholasionata.com/Scanned-Website/images/logo.png"
+    name: 'scanned',
+    link: 'sa.png'
   }
 ]
