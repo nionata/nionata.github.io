@@ -43,7 +43,7 @@ export default {
     props: ['dev'],
     data() {
         return {
-            me
+            me: './app/images/me.png'
         }
     }
 }
