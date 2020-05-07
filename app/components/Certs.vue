@@ -1,10 +1,10 @@
 <template>
-    <div id="certs" class="row">
-        <h1>Certifications</h1>
-        <div class="item row">
+    <div id="certs" class="col">
+        <h2 class="item primary">Certifications</h2>
+        <div id="certsContainer" class="item rowNarrow">
             <div class="item cert" v-for="cert in certs" :key="cert.badge">
                 <a :href="'https://www.youracclaim.com/badges/' + cert.badge" target="_blank">
-                    <img :src="'./app/images/certs/' + cert.img">
+                    <img :src="'./app/images/certs/' + cert.img" class="badge" />
                 </a>
             </div>
         </div>
