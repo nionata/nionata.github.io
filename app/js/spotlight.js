@@ -1,4 +1,4 @@
-var spotlight = [
+export default [
   {
     name: "visa",
     link: "https://cdn.visa.com/cdn/assets/images/logos/visa/logo.png"
