@@ -1,0 +1,49 @@
+body 
+  text-align: center
+  font-family: 'Roboto'
+  font-size: 12pt
+  color: $light
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+* 
+  box-sizing: border-box
+
+h1 
+  color: $dark
+
+.container 
+  padding: 2.5vh 7vw 2.5vh 7vw
+
+.row 
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  padding: 2.5vh 7vw 2.5vh 7vw
+
+.col 
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 2.5vh 7vw 2.5vh 7vw
+
+.item 
+  flex: 1
+
+.align-right 
+  text-align: right
+
+.align-left 
+  text-align: left
+
+.fade-enter-active, .fade-leave-active 
+  transition: opacity 0.5s
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ 
+  opacity: 0
+
+@media only screen and (min-width: 414px) and (max-width: 767px)
+  #app
