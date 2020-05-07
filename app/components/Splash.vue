@@ -37,7 +37,7 @@
 
 <script>
 import '../styles/splash.sass'
-import me from '../images/me.png'
+// import me from '../images/me.png'
 
 export default {
     props: ['dev'],
