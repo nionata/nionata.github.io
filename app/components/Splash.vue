@@ -1,7 +1,7 @@
 <template>
-    <div id="splash" class="container col">
+    <div id="splash" class="col">
           <div class="item row" id="splash-header">
-            <img src="images/me.png" id="splash-img" 
+            <img :src="me" id="splash-img" 
                 @mouseover="dev.show=true"
             />
           </div>
@@ -29,7 +29,7 @@
                 </h3>
             </div>
           </div>
-          <a href="#experience">
+          <a href="#timeline">
             <i class="fa fa-chevron-down fa-5x" aria-hidden="true" id="splash-action"/>
           </a>
     </div>
@@ -37,8 +37,14 @@
 
 <script>
 import '../styles/splash.sass'
+import me from '../images/me.png'
 
 export default {
-
+    props: ['dev'],
+    data() {
+        return {
+            me
+        }
+    }
 }
 </script>
