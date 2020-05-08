@@ -7,6 +7,7 @@ module.exports = {
   entry: './app/main.js',
   resolve: {
     alias: {
+        comp: path.resolve(__dirname, 'app/components/'),
         images: path.resolve(__dirname, 'app/images/'),
         js: path.resolve(__dirname, 'app/js/'),
         styles: path.resolve(__dirname, 'app/styles/'),
