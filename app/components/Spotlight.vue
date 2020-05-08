@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import '../styles/spotlight.sass'
-import spotlight from '../js/spotlight'
+import 'styles/spotlight.sass'
+import spotlight from 'js/spotlight'
 
 export default {
     data() {

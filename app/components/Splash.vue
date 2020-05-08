@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import '../styles/splash.sass'
+import 'styles/splash.sass'
 // import me from '../images/me.png'
 
 export default {

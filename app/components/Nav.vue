@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import '../styles/nav.sass'
-import logo from '../images/logo.png'
+import 'styles/nav.sass'
+import logo from 'images/logo.png'
 
 export default {
     data() {

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import '../styles/certs.sass'
-import certs from '../js/certs'
+import 'styles/certs.sass'
+import certs from 'js/certs'
 
 export default {
     data() {
