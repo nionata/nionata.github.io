@@ -1,79 +1,93 @@
-var experience = [
+export default [
   {
-    name: "Stream Monkey",
-    position: "Backend Engineering Intern",
-    date: {
-      start: "May 2019",
-      end: "Current"
+    "title": "Stream Monkey",
+    "subTitle": "Backend Engineering Intern",
+    "date": {
+      "start": "May 2019",
+      "end": "Current"
     },
-    description: "206 Partial Content",
-    technologies: ["NodeJS", "MySQL", "Serverless", "AWS"],
-    links: [
+    "description": [
+      "Reindexed 1.08 B docs from ES 2.3 to 6.7 in ~14 hrs with Lambda, DynamoDB, and S3",
+      "Supported the transition to MediaConvert, leading to dramatically faster transcoding and half the S3/Akamai data access, by creating a transferable data aggregator and writing unit tests",
+      "Refactored Lambda authorizer (~20k reqs/hr): decoupled data access from the main controller to enable thorough unit testing, added account lookup by Stripe ID, and wrote additional unit tests",
+      "Developed a PDF generating service to serve invoices on demand with S3, Lambda, and Cloudfront"
+    ],
+    "tags": ["NodeJS", "MySQL", "Serverless", "AWS", "Lambda", "DynamoDB", "S3", "Elasticsearch", "JavaScript"],
+    "links": [
       {
-        type: "Website",
-        link: "https://www.streammonkey.com/"
+        "type": "Website",
+        "link": "http://www.streammonkey.com/"
       },
       {
-        type: "Blog",
-        link: "https://blog.streammonkey.com/say-hello-to-nick-the-intern-11f21970c312"
+        "type": "Say Hello to Nick the Intern",
+        "link": "https://blog.streammonkey.com/say-hello-to-nick-the-intern-11f21970c312"
       }
     ],
-    image: "https://cdn-images-1.medium.com/max/800/1*cH5iiA20ThJ1qTeM_34Jkg.png"
+    "image": "https://cdn-images-1.medium.com/max/800/1*cH5iiA20ThJ1qTeM_34Jkg.png"
   },
   {
-    name: "Raymond James Financial",
-    position: "Software Developer Intern",
-    date: {
-      start: "May 2018",
-      end: "August 2018"
+    "title": "Raymond James Financial",
+    "subTitle": "Software Developer Intern",
+    "date": {
+      "start": "May 2018",
+      "end": "August 2018"
     },
-    description: "I worked on Enterprise Services and the Secure Software Development Lifecycle.",
-    technologies: ["Java", "Spring", "OracleDB"],
-    links: [
+    "description": [
+      "Developed a cache staleness tool for an existing Java Spring Enterprise Service to support an effort to reduce latency below 1500ms",
+      "Assessed the SSDLC in a team of 6 interns and presented a React MVP for a vulnerability dashboard"
+    ],
+    "tags": ["Java", "Spring", "OracleDB", "Enterprise Services"],
+    "links": [
       {
-        type: "Website",
-        link: "https://www.raymondjames.com/"
+        "type": "Website",
+        "link": "https://www.raymondjames.com/"
       }
     ],
-    image: "https://www.raymondjames.com/freestone/images/aboutus_banner.png"
+    "image": "http://www.raymondjames.com/freestone/images/aboutus_banner.png"
   },
   {
-    name: "Scanned",
-    position: "Co-Founder/Software Developer",
-    date: {
-      start: "September 2016",
-      end: "September 2018"
+    "title": "Scanned",
+    "subTitle": "Co-Founder/Software Developer",
+    "date": {
+      "start": "September 2016",
+      "end": "September 2018"
     },
-    description: "A startup I co-founded and worked as the tech lead. Through mobile and web apps we provided a highly efficient group attendance tracking service.",
-    technologies: ["React.js", "React Native", "Firebase"],
-    links: [
+    "description": [
+      "Won 1st place and $10,000 from the Next Generation Tech Startup Competition",
+      "Developed the iOS, Android, and web apps with Swift, React Native, React Redux, and Firebase"
+    ],
+    "tags": ["Swift", "ReactJS", "React Native", "Firebase", "JavaScript"],
+    "links": [
       {
-        type: "Website",
-        link: "/Scanned-Website/"
+        "type": "Website",
+        "link": "/Scanned-Website/"
       },
       {
-        type: "News",
-        link: "https://www.linkedin.com/feed/update/urn:li:activity:6263304030425018368"
+        "type": "Winning Next Generation Tech",
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6263304030425018368"
       }
     ],
-    image: "images/scanned.png"
+    "image": "images/scanned.png"
   },
   {
-    name: "Lockheed Martin",
-    position: "Industrial Engineering Intern",
-    date: {
-      start: "May 2017",
-      end: "August 2017"
+    "title": "Lockheed Martin",
+    "subTitle": "Industrial Engineering Intern",
+    "date": {
+      "start": "May 2017",
+      "end": "August 2017"
     },
-    description: "I worked on data analytics and reporting. I created two tools that drastically reduced process times.",
-    technologies: ["VBA", "Excel", "Data Analysis"],
-    links: [
+    "description": [
+      "Set up a work-in-progress inventory tool with VBA that led to cost savings of $10,000+",
+      "Developed an estimating tool with VBA that transformed a process from 3 hours to 10 minutes",
+      "Presented underperforming manufacturing operations weekly to the Space team"
+    ],
+    "tags": ["VBA", "Excel", "Data Analysis"],
+    "links": [
       {
-        type: "Website",
-        link: "https://www.lockheedmartin.com/us.html"
+        "type": "Website",
+        "link": "https://www.lockheedmartin.com/us.html"
       }
     ],
-    image: "https://www.lockheedmartin.com/content/dam/lockheed-martin/general/LM_logo_grey.svg"
-  },
-  
+    "image": "http://aeroengineer.org/wp-content/uploads/2016/11/LOCKHEED.png"
+  }
 ]
