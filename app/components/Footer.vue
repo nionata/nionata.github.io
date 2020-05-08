@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import '../styles/footer.sass'
-import contacts from '../js/contacts'
+import 'styles/footer.sass'
+import contacts from 'js/contacts'
 
 export default {
 	data() {

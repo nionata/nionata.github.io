@@ -1,0 +1,56 @@
+@import app
+
+#experience
+    color: $dark
+
+#header 
+    width: 100%
+    justify-content: flex-start
+    .detailsContainer
+        align-items: center
+        height: 106px
+
+#experienceTitle
+    text-align: left
+    margin: 0
+
+.experience
+    @extend .rowBare
+    height: 46px
+    width: 100%
+
+.columnContainer
+    @extend .item, .rowBare
+    margin-right: 20px
+    justify-content: left
+    max-width: 106px
+
+.dateContainer
+    width: 36px
+    margin-right: 10px
+
+.column
+    position: absolute
+    
+.date 
+    color: $dark
+    rect, circle
+        @extend .column
+        fill: $dark
+
+.work 
+    color: $primary
+    rect, circle
+        @extend .column
+        fill: $primary
+
+.projects 
+    color: $accent
+    rect, circle
+        @extend .column
+        fill: $accent
+
+.detailsContainer
+    @extend .rowBare
+    flex: 10
+    height: 100%

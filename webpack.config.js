@@ -1,9 +1,19 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const Webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
   entry: './app/main.js',
+  resolve: {
+    alias: {
+        comp: path.resolve(__dirname, 'app/components/'),
+        images: path.resolve(__dirname, 'app/images/'),
+        js: path.resolve(__dirname, 'app/js/'),
+        styles: path.resolve(__dirname, 'app/styles/'),
+    },
+    extensions: ['.js']
+  },
   module: {
     rules: [
       { test: /\.js$/, use: 'babel-loader' },
