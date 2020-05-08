@@ -2,7 +2,7 @@
   <div id="experience" class="col">
     <div id="header" class="rowBare">
       <Header />
-      <h2 id="experienceTitle" class="">Experience</h2>
+      <h2 class="sectionTitle">Experience</h2>
     </div>
     <div class="experience" v-for="exp in experience" :key="exp.title">
       <div class="columnContainer">
@@ -10,8 +10,8 @@
           <p v-if="exp.type === 'date'" :class="exp.type">{{exp.title}}</p>
         </div>
         <Column
-          v-for="(type, i) in getTimeTypes(exp.type)"
-          :class="branches[i]"
+          v-for="(type, i) in getColumnTypes(exp.type)"
+          :class="columnTags[i]"
           :key="i"
           :type="type"
         />
@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       experience: [],
-      branches: ["date", "work", "projects"]
+      columnTags: ["date", "work", "projects"]
     }
   },
   methods: {
@@ -72,7 +72,7 @@ export default {
         type: "date"
       }
     },
-    getTimeTypes: function(type) {
+    getColumnTypes: function(type) {
       let types = ["rect", "rect", "rect"]
       let i
 
