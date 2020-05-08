@@ -29,7 +29,7 @@
                 </h3>
             </div>
           </div>
-          <a href="#timeline">
+          <a href="#experience">
             <i class="fa fa-chevron-down fa-5x" aria-hidden="true" id="splash-action"/>
           </a>
     </div>

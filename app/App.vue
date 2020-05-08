@@ -3,7 +3,7 @@
       <Nav :dev="dev" />
       <Splash />
       <Spotlight />
-      <Timeline />
+      <Experience />
       <Certs />
       <Footer />
   </div>
@@ -14,12 +14,12 @@ import 'styles/app.sass'
 import Nav from 'comp/Nav.vue'
 import Splash from 'comp/Splash.vue'
 import Spotlight from 'comp/Spotlight.vue'
-import Timeline from 'comp/Timeline.vue'
+import Experience from 'comp/Experience.vue'
 import Certs from 'comp/Certs.vue'
 import Footer from 'comp/Footer.vue'
 
 export default { 
-    components: { Nav, Splash, Spotlight, Timeline, Certs, Footer },
+    components: { Nav, Splash, Spotlight, Experience, Certs, Footer },
     data() {
         return {
             dev: false

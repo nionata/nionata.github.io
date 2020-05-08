@@ -5,8 +5,8 @@
             <a href="#splash" class="item">
                 <img id="navLogo" :src="logo" />
             </a>
-            <a href="#timeline" class="item navLink">
-                Timeline
+            <a href="#experience" class="item navLink">
+                Experience
             </a>
             <a href="#skills" class="item navLink">
                 Skills
