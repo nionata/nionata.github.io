@@ -1,7 +1,7 @@
 <template>
     <div id="spotlight" class="row">
-        <div class="item img-container" v-for="s in spotlight" v-bind:key="s.name">
-          <img :src="'./app/images/spotlight/' + s.link" alt="s.name" />
+        <div class="item imageContainer" v-for="s in spotlight" v-bind:key="s.name">
+          <img class="spotlight" :src="'./app/images/spotlight/' + s.link" alt="s.name" />
         </div>
     </div>
 </template>
