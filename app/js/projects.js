@@ -10,7 +10,7 @@ export default [
       "Won 1st place and $10,000 from the Next Generation Tech Startup Competition",
       "Developed the iOS, Android, and web apps with Swift, React Native, React Redux, and Firebase"
     ],
-    "tags": ["Swift", "ReactJS", "React Native", "Firebase", "JavaScript"],
+    "tags": ["Swift", "React", "React Native", "Firebase", "JavaScript"],
     "links": [
       {
         "type": "Website",
@@ -25,7 +25,7 @@ export default [
   },
   {
     "title": "Bloom",
-    "tags": ["NodeJS", "PostgreSQL", "Heroku", "CI/CD", "Agile"],
+    "tags": ["Node", "PostgreSQL", "Heroku", "CI/CD", "Agile"],
     "links": [
       {
         "type": "Website",
@@ -47,7 +47,7 @@ export default [
   },
   {
     "title": "Danger.ai",
-    "tags": ["Python", "Flask", "ReactJS", "NoSQL", "Serverless", "Google Cloud Platform"],
+    "tags": ["Python", "Flask", "React", "NoSQL", "Serverless", "Google Cloud Platform"],
     "links": [
       {
         "type": "Devpost",
@@ -69,7 +69,7 @@ export default [
   },
   {
     "title": "SpatialVR",
-    "tags": ["ReactJS", "NodeJS", "MongoDB"],
+    "tags": ["React", "Node", "MongoDB"],
     "link": [
       {
         "type": "Devpost",
@@ -91,7 +91,7 @@ export default [
   },
   {
     "title": "Friendcation",
-    "tags": ["ReactJS", "Firebase", "Amadeus Travel API"],
+    "tags": ["React", "Firebase", "Amadeus Travel API"],
     "links": [
       {
         "type": "Devpost",
@@ -113,7 +113,7 @@ export default [
   },
   {
     "title": "Big Brother Experience",
-    "tags": ["ReactJS", "Heroku"],
+    "tags": ["React", "Heroku"],
     "links": [
       {
         "type": "Github",
@@ -131,7 +131,7 @@ export default [
   },
   {
     "title": "Sundial",
-    "tags": ["ReactJS", "Heroku", "Firebase"],
+    "tags": ["React", "Heroku", "Firebase"],
     "links": [
       {
         "type": "Website",

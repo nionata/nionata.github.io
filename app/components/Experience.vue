@@ -4,7 +4,7 @@
       <Header />
       <h2 class="sectionTitle">Experience</h2>
     </div>
-    <div class="experience" v-for="(exp, i) in experiences" :key="exp.title">
+    <div class="experience" v-for="exp in experiences" :key="exp.title">
       <div class="dateContainer">
           <p v-if="exp.type === 'date'" :class="exp.type">{{exp.title}}</p>
       </div>
@@ -17,7 +17,27 @@
         />
       </div>
       <div class="detailsContainer" v-if="exp.type !== 'date'">
-        <p class="experienceTitle" :class="exp.type">{{exp.title}}</p>
+         <div id="detailsHeader" class="rowBare" :class="exp.type">
+            <div class="rowBare">
+              <p v-if="exp.type === 'work'">{{exp.subTitle}} @&nbsp</p>
+              <p class="experienceTitle">{{exp.title}}</p>
+            </div>
+            <div class="rowBare">
+              <div class="tag" v-for="(tag, i) in exp.tags" :key="i">{{tag}}</div>
+            </div>
+         </div>
+         <div id="detailsBody" class="colBare">
+           <div class="rowBare item">
+              <p>{{exp.date.start}}</p>
+              <p v-if="exp.date.end">&nbsp- {{exp.date.end}}</p>
+            </div>
+            <div id="descriptionContainer" class="colBare item">
+              <li v-for="(line, i) in exp.description" :key="i">{{line}}</li>
+            </div>
+            <div id="linksContainer" class="rowBare">
+              <a v-for="(link, i) in exp.links" :href="link.link" target="_blank" :key="i">{{link.type}}</a>
+            </div>
+         </div>
       </div>
     </div>
   </div>
