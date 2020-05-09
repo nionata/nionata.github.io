@@ -2,22 +2,42 @@
   <div id="experience" class="col">
     <div id="header" class="rowBare">
       <Header />
-      <h2 id="experienceTitle" class="">Experience</h2>
+      <h2 class="sectionTitle">Experience</h2>
     </div>
-    <div class="experience" v-for="exp in experience" :key="exp.title">
-      <div class="columnContainer">
-        <div class="dateContainer">
+    <div class="experience" v-for="exp in experiences" :key="exp.title">
+      <div class="dateContainer">
           <p v-if="exp.type === 'date'" :class="exp.type">{{exp.title}}</p>
-        </div>
+      </div>
+      <div class="columnContainer">
         <Column
-          v-for="(type, i) in getTimeTypes(exp.type)"
-          :class="branches[i]"
-          :key="i"
+          v-for="(type, j) in getColumnTypes(exp.type)"
+          :class="columnTags[j]"
+          :key="j"
           :type="type"
         />
       </div>
-      <div class="detailsContainer">
-        <p v-if="exp.type !== 'date'" :class="exp.type">{{exp.title}}</p>
+      <div class="detailsContainer" v-if="exp.type !== 'date'">
+         <div id="detailsHeader" class="rowBare" :class="exp.type">
+            <div class="rowBare">
+              <p v-if="exp.type === 'work'">{{exp.subTitle}} @&nbsp</p>
+              <p class="experienceTitle">{{exp.title}}</p>
+            </div>
+            <div class="rowBare">
+              <div class="tag" v-for="(tag, i) in exp.tags" :key="i">{{tag}}</div>
+            </div>
+         </div>
+         <div id="detailsBody" class="colBare">
+           <div class="rowBare item">
+              <p>{{exp.date.start}}</p>
+              <p v-if="exp.date.end">&nbsp- {{exp.date.end}}</p>
+            </div>
+            <div id="descriptionContainer" class="colBare item">
+              <li v-for="(line, i) in exp.description" :key="i">{{line}}</li>
+            </div>
+            <div id="linksContainer" class="rowBare">
+              <a v-for="(link, i) in exp.links" :href="link.link" target="_blank" :key="i">{{link.type}}</a>
+            </div>
+         </div>
       </div>
     </div>
   </div>
@@ -34,8 +54,9 @@ export default {
   components: { Header, Column },
   data() {
     return {
-      experience: [],
-      branches: ["date", "work", "projects"]
+      experiences: [],
+      columnTags: ["date", "work", "projects"],
+      active: -1
     }
   },
   methods: {
@@ -72,7 +93,7 @@ export default {
         type: "date"
       }
     },
-    getTimeTypes: function(type) {
+    getColumnTypes: function(type) {
       let types = ["rect", "rect", "rect"]
       let i
 
@@ -93,7 +114,7 @@ export default {
     }
   },
   mounted: function() {
-    this.experience = this.addYears([
+    this.experiences = this.addYears([
       ...this.labelTimes(work, "work"),
       ...this.labelTimes(projects, "projects")
     ])

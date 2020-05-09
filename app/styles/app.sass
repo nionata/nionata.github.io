@@ -1,3 +1,7 @@
+html 
+  scroll-behavior: smooth
+  scroll-padding: 50px
+
 body 
   text-align: center
   font-family: 'Roboto'
@@ -39,11 +43,15 @@ body
   @extend .col
   padding: 2.5vh 0 2.5vh 0 
 
+.colBare
+  @extend .col
+  padding: 0
+
 .item 
   flex: 1
 
 .sectionTitle
-  width: 100%
+  color: $primary
 
 h2
   margin-bottom: 0

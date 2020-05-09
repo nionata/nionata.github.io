@@ -1,10 +1,41 @@
 export default [
   {
+    "title": "University of Florida",
+    "subTitle": "TA",
+    "date": {
+      "start": "August 2019",
+      "end": "Decemeber 2019"
+    },
+    "description": [
+      "Taught core course content (Mongo, Express, React, Node, Git, Agile) weekly to 60 students",
+      "Updated technical coursework, led weekly TA meetings, and answered student questions"
+    ],
+    "tags": ["Mongo", "Express", "React", "Node", "Git", "Agile"],
+    "links": [
+    ],
+    "image": ""
+  },
+  {
+    "title": "VISA",
+    "subTitle": "Incoming Software Engineer Intern",
+    "date": {
+      "start": "May 2020",
+      "end": "July 2020"
+    },
+    "description": [
+      "Loading"
+    ],
+    "tags": [],
+    "links": [
+    ],
+    "image": ""
+  },
+  {
     "title": "Stream Monkey",
     "subTitle": "Backend Engineering Intern",
     "date": {
       "start": "May 2019",
-      "end": "Current"
+      "end": "July 2019"
     },
     "description": [
       "Reindexed 1.08 B docs from ES 2.3 to 6.7 in ~14 hrs with Lambda, DynamoDB, and S3",
@@ -12,7 +43,7 @@ export default [
       "Refactored Lambda authorizer (~20k reqs/hr): decoupled data access from the main controller to enable thorough unit testing, added account lookup by Stripe ID, and wrote additional unit tests",
       "Developed a PDF generating service to serve invoices on demand with S3, Lambda, and Cloudfront"
     ],
-    "tags": ["NodeJS", "MySQL", "Serverless", "AWS", "Lambda", "DynamoDB", "S3", "Elasticsearch", "JavaScript"],
+    "tags": ["JavaScript", "Node", "MySQL", "Serverless", "AWS", "Elasticsearch"],
     "links": [
       {
         "type": "Website",
@@ -44,30 +75,6 @@ export default [
       }
     ],
     "image": "http://www.raymondjames.com/freestone/images/aboutus_banner.png"
-  },
-  {
-    "title": "Scanned",
-    "subTitle": "Co-Founder/Software Developer",
-    "date": {
-      "start": "September 2016",
-      "end": "September 2018"
-    },
-    "description": [
-      "Won 1st place and $10,000 from the Next Generation Tech Startup Competition",
-      "Developed the iOS, Android, and web apps with Swift, React Native, React Redux, and Firebase"
-    ],
-    "tags": ["Swift", "ReactJS", "React Native", "Firebase", "JavaScript"],
-    "links": [
-      {
-        "type": "Website",
-        "link": "/Scanned-Website/"
-      },
-      {
-        "type": "Winning Next Generation Tech",
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6263304030425018368"
-      }
-    ],
-    "image": "images/scanned.png"
   },
   {
     "title": "Lockheed Martin",
