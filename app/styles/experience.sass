@@ -62,7 +62,7 @@
     align-items: flex-start
     justify-content: flex-start
     transition: all 0.5s ease-in-out, background-color 0s
-    padding: 12.5px
+    padding: 11.5px
     max-width: 100%
     p
         margin: 0
@@ -83,11 +83,11 @@
     width: 100%
     justify-content: space-between
 
-.tag
-    padding: 1px 2.5px 1px 2.5px
-    box-shadow: 0 0 0 1pt $dark
-    border-radius: 5%
-    margin: 0 5px 0 5px
+.outline
+    padding: 0px 5px 0px 5px
+    border-radius: 5px
+    border: 1px solid $dark
+    margin: 0 2.5px 0 2.5px
 
 #detailsBody
     padding: 2.5vh
@@ -110,13 +110,10 @@
     align-items: flex-end
     justify-content: center
     a
+        @extend .outline
+        padding: 10px
         text-decoration: none
         color: $dark
-        box-shadow: 0 0 0 1pt $dark
-        border-radius: 5%
-        padding: 5px 5px 5px 5px
-        margin: 0 5px 0 5px
     a:hover
         color: $light
         background-color: $dark
-        box-shadow: none

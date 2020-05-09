@@ -23,7 +23,7 @@
               <p class="experienceTitle">{{exp.title}}</p>
             </div>
             <div class="rowBare">
-              <div class="tag" v-for="(tag, i) in exp.tags" :key="i">{{tag}}</div>
+              <span class="outline" v-for="(tag, i) in exp.tags" :key="i">{{tag}}</span>
             </div>
          </div>
          <div id="detailsBody" class="colBare">
@@ -35,7 +35,7 @@
               <li v-for="(line, i) in exp.description" :key="i">{{line}}</li>
             </div>
             <div id="linksContainer" class="rowBare">
-              <a v-for="(link, i) in exp.links" :href="link.link" target="_blank" :key="i">{{link.type}}</a>
+              <a v-for="(link, i) in exp.links" :href="link.link" target="_blank" :key="i"><span>{{link.type}}</span></a>
             </div>
          </div>
       </div>
