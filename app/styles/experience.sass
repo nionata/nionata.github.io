@@ -6,24 +6,23 @@
 #header 
     width: 100%
     justify-content: flex-start
-    .detailsContainer
-        align-items: center
-        height: 106px
+    .sectionTitle
+        margin: 0
 
 .experience
     @extend .rowBare
     height: 46px
     width: 100%
+    justify-content: flex-start
 
 .columnContainer
     @extend .item, .rowBare
-    margin-right: 20px
+    margin: 0 20px 0 10px
     justify-content: left
-    max-width: 106px
+    max-width: 60px
 
 .dateContainer
     width: 36px
-    margin-right: 10px
 
 .column
     color: white
@@ -47,6 +46,21 @@
         fill: $accent
 
 .detailsContainer
-    @extend .rowBare
+    @extend .colBare
     flex: 10
     height: 100%
+    align-items: flex-start
+    justify-content: flex-start
+    transition: all 1s ease-in-out
+    p
+        margin: 12.5px
+
+.detailsContainer:hover
+    @extend .item
+    $height: 250px
+    height: $height
+    margin-top: $height - 46px
+    outline: 5px solid $dark
+    background-color: $light
+    padding: 2.5vh
+    z-index: 1

@@ -8,9 +8,9 @@
             <a href="#experience" class="item navLink">
                 Experience
             </a>
-            <a href="#skills" class="item navLink">
+            <!-- <a href="#skills" class="item navLink">
                 Skills
-            </a>
+            </a> -->
             <a href="#certs" class="item navLink">
                 Certifications
             </a>

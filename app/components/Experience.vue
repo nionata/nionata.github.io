@@ -4,20 +4,20 @@
       <Header />
       <h2 class="sectionTitle">Experience</h2>
     </div>
-    <div class="experience" v-for="exp in experience" :key="exp.title">
-      <div class="columnContainer">
-        <div class="dateContainer">
+    <div class="experience" v-for="(exp, i) in experiences" :key="exp.title">
+      <div class="dateContainer">
           <p v-if="exp.type === 'date'" :class="exp.type">{{exp.title}}</p>
-        </div>
+      </div>
+      <div class="columnContainer">
         <Column
-          v-for="(type, i) in getColumnTypes(exp.type)"
-          :class="columnTags[i]"
-          :key="i"
+          v-for="(type, j) in getColumnTypes(exp.type)"
+          :class="columnTags[j]"
+          :key="j"
           :type="type"
         />
       </div>
-      <div class="detailsContainer">
-        <p v-if="exp.type !== 'date'" :class="exp.type">{{exp.title}}</p>
+      <div class="detailsContainer" v-if="exp.type !== 'date'">
+        <p class="experienceTitle" :class="exp.type">{{exp.title}}</p>
       </div>
     </div>
   </div>
@@ -34,8 +34,9 @@ export default {
   components: { Header, Column },
   data() {
     return {
-      experience: [],
-      columnTags: ["date", "work", "projects"]
+      experiences: [],
+      columnTags: ["date", "work", "projects"],
+      active: -1
     }
   },
   methods: {
@@ -93,7 +94,7 @@ export default {
     }
   },
   mounted: function() {
-    this.experience = this.addYears([
+    this.experiences = this.addYears([
       ...this.labelTimes(work, "work"),
       ...this.labelTimes(projects, "projects")
     ])
