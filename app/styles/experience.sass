@@ -11,73 +11,70 @@
         margin: 0
 
 .experience
-    @extend .rowBare
-    height: 46px
+    @extend .item, .rowBare
     width: 100%
+    height: 100%
     justify-content: flex-start
+    align-items: flex-start
+    transition: all 0.5s ease-in-out
+    position: relative
 
 .dateContainer
     @extend .item, .rowBare
+    height: 46px
     max-width: 36px
     flex-basis: 36px
     flex-shrink: 0
-    height: 46px
     p
         margin: 0
+        height: auto
 
 .columnContainer
-    @extend .item, .rowBare
+    @extend .rowBare
     margin: 0 20px 0 10px
-    justify-content: left
     max-width: 60px
-
-.dateContainer
-    width: 36px
+    align-items: flex-start
+    height: 100%
+    left: 36px
+    position: absolute
 
 .column
-    color: white
-    
+    height: 100%
+
 .date 
+    @extend .column
     color: $dark
     rect, circle
-        @extend .column
         fill: $dark
 
 .work 
+    @extend .column
     color: $primary
     rect, circle
-        @extend .column
         fill: $primary
 
 .projects 
+    @extend .column
     color: $accent
     rect, circle
-        @extend .column
         fill: $accent
 
 .detailsContainer
-    @extend .colBare
+    @extend .item, .colBare
     flex: 10
-    height: 100%
     align-items: flex-start
     justify-content: flex-start
     transition: all 0.5s ease-in-out, background-color 0s
     padding: 11.5px
+    margin-left: 90px
     max-width: 100%
     p
         margin: 0
 
 .detailsContainer:hover
-    @extend .item
-    $height: 50vh
-    height: $height
-    margin-top: calc(#{$height} - 46px)
-    outline: 5px solid $dark
-    background-color: $light
-    padding: 2.5vh
-    z-index: 1
     #detailsBody
         visibility: visible
+        position: relative
 
 #detailsHeader
     width: 100%
@@ -96,6 +93,7 @@
     justify-content: flex-start
     align-items: flex-start
     visibility: hidden
+    position: absolute
 
 #descriptionContainer
     justify-content: center
