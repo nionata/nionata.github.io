@@ -1,3 +1,5 @@
+@import app
+    
 #nav 
     position: fixed
     top: 0px
@@ -6,6 +8,7 @@
     background-color: $primary
     padding: 0
     z-index: 1
+    flex-wrap: nowrap
 
 #nav .row
     padding: 0
@@ -14,9 +17,10 @@
 #navLeft
     justify-content: flex-start
     align-items: center
+    flex-wrap: nowrap
 
 #nav .item .item
-    padding: 0 15px 0 15px
+    padding: 0 1vw 0 1vw
     flex-grow: 0
 
 #navLogo
@@ -27,9 +31,13 @@
     justify-content: flex-end
 
 .navLink
+    @extend .item, .rowBare
+    align-items: center
     text-decoration: none
     color: $light
-    padding: 15px !important
+    height: 100%
+    p
+        margin: 0
 
 .navLink:hover
     background-color: $accent

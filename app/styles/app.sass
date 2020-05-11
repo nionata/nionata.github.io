@@ -1,6 +1,10 @@
 html 
   scroll-behavior: smooth
   scroll-padding: 50px
+  -ms-overflow-style: none
+
+html::-webkit-scrollbar 
+  display: none
 
 body 
   text-align: center
@@ -23,6 +27,7 @@ body
   align-items: center
   justify-content: space-between
   padding: 2.5vh 7vw 2.5vh 7vw
+  flex-wrap: wrap
 
 .rowNarrow
   @extend .row
