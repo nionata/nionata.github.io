@@ -17,8 +17,8 @@
         />
       </div>
       <div class="detailsContainer" v-if="exp.type !== 'date'" 
-        @mouseenter="active = x" 
-        @mouseleave="active = -1"
+        @mouseenter="onDetails(x)" 
+        @mouseleave="onDetails()"
       >
          <div id="detailsHeader" class="rowBare" :class="exp.type">
             <div class="rowBare">
@@ -124,12 +124,14 @@ export default {
       types[i] = "rectCircle"
       return types
     },
-    onDetailsClick(x) {
-      if (this.active === x){
-        this.active = -1
-      } else {
-        this.active = x
-      }
+    onDetails(x) {
+      setTimeout(() => {
+        if(x > -1) {
+          this.active = x
+        } else {
+          this.active = -1
+        }
+      }, 0)
     }
   },
   mounted: function() {
