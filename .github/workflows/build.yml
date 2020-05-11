@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+    branches: [ master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm install
+    - run: npm run build
+    - uses: EndBug/add-and-commit@v4
+      with:
+        author_name: nionata
+        author_email: n.ionata129@gmail.com 
+        message: "Build app"
+        add: "*"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

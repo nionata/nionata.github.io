@@ -1,0 +1,80 @@
+html 
+  scroll-behavior: smooth
+  scroll-padding: 50px
+  -ms-overflow-style: none
+
+html::-webkit-scrollbar 
+  display: none
+
+body 
+  text-align: center
+  font-family: 'Roboto'
+  font-size: 12pt
+  color: $light
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+* 
+  box-sizing: border-box
+
+.container 
+  padding: 2.5vh 7vw 2.5vh 7vw
+
+.row 
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  padding: 2.5vh 7vw 2.5vh 7vw
+  flex-wrap: wrap
+
+.rowNarrow
+  @extend .row
+  padding: 2.5vh 0 2.5vh 0 
+
+.rowBare
+  @extend .row
+  padding: 0
+
+.col 
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 2.5vh 7vw 2.5vh 7vw
+
+.colNarrow
+  @extend .col
+  padding: 2.5vh 0 2.5vh 0 
+
+.colBare
+  @extend .col
+  padding: 0
+
+.item 
+  flex: 1
+
+.sectionTitle
+  color: $primary
+
+h2
+  margin-bottom: 0
+
+.primary
+  color: $primary
+
+.accent
+  color: $accent
+
+.dark
+  color: $dark
+
+.fade-enter-active, .fade-leave-active 
+  transition: opacity 0.5s
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ 
+  opacity: 0
+
+@media only screen and (min-width: 414px) and (max-width: 767px)
+  #app
