@@ -12,7 +12,7 @@ module.exports = {
         js: path.resolve(__dirname, 'app/js/'),
         styles: path.resolve(__dirname, 'app/styles/'),
     },
-    extensions: ['.js']
+    extensions: ['.js', '.vue']
   },
   module: {
     rules: [
