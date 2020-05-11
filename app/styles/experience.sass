@@ -16,7 +16,6 @@
     height: 100%
     justify-content: flex-start
     align-items: flex-start
-    transition: all 0.5s ease-in-out
     position: relative
 
 .dateContainer
@@ -37,6 +36,7 @@
     height: 100%
     left: 36px
     position: absolute
+    flex-wrap: nowrap
 
 .column
     height: 100%
@@ -60,32 +60,36 @@
         fill: $accent
 
 .detailsContainer
-    @extend .item, .colBare
+    @extend .colBare
     flex: 10
-    align-items: flex-start
+    align-items: center
     justify-content: flex-start
     transition: all 0.5s ease-in-out, background-color 0s
-    padding: 11.5px
     margin-left: 90px
-    max-width: 100%
+    width: 100%
     p
         margin: 0
 
 .detailsContainer:hover
-    padding: 2.5vh
+    padding: 1vh
 
 #detailsHeader
+    min-height: 46px
     width: 100%
     justify-content: space-between
+    padding: 10px 0 10px 0
+
+#tagsContainer
+    justify-content: flex-start
 
 .outline
     padding: 0px 5px 0px 5px
     border-radius: 5px
     border: 1px solid $dark
-    margin: 0 2.5px 0 2.5px
+    margin: 2.5px
 
 #detailsBody
-    padding: 2.5vh
+    padding: 1vh
     height: 100%
     width: 100%
     justify-content: flex-start
@@ -96,7 +100,7 @@
     align-items: flex-start
     margin: 2vh
     li 
-        padding: 1vh 0 1vh 0
+        padding: 0.5vh 0 0.5vh 0
 
 #linksContainer
     flex: 10
@@ -111,3 +115,9 @@
     a:hover
         color: $light
         background-color: $dark
+
+@media (max-width: 600px) 
+    #experience
+        padding: 1vh
+    .detailsContainer
+        margin-left: 75px
