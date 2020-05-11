@@ -19,7 +19,6 @@
       <div class="detailsContainer" v-if="exp.type !== 'date'" 
         @mouseenter="active = x" 
         @mouseleave="active = -1"
-        @click="onDetailsClick(x)"
       >
          <div id="detailsHeader" class="rowBare" :class="exp.type">
             <div class="rowBare">
