@@ -126,13 +126,11 @@ export default {
       return types
     },
     onDetails(x) {
-      setTimeout(() => {
-        if(x > -1) {
-          this.active = x
-        } else {
-          this.active = -1
-        }
-      }, 0)
+      if(x > -1 && this.active !== x) {
+        this.active = x
+      } else {
+        this.active = -1
+      }
     }
   },
   mounted: function() {
