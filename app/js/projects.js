@@ -63,8 +63,7 @@ export default [
       "A video monitoring system powered by deep learning.",
     ],
     "date": {
-      "start": "January 2019",
-      "end": "January 2019"
+      "start": "January 2019"
     }
   },
   {
@@ -85,8 +84,7 @@ export default [
       "A VR experience and fullstack web app for helping people with spatial hearing disorders."
     ],
     "date": {
-      "start": "January 2018",
-      "end": "January 2018"
+      "start": "January 2018"
     }
   },
   {
@@ -107,8 +105,7 @@ export default [
       "The easiest and most economical way to plan a vacation with a group of distant friends.",
     ],
     "date": {
-      "start": "September 2017",
-      "end": "September 2017"
+      "start": "September 2017"
     }
   },
   {
@@ -125,8 +122,7 @@ export default [
       "Big Brother tests your knowledge of the book 1984 through an interactive quiz.",
     ],
     "date": {
-      "start": "April 2017",
-      "end": "April 2017"
+      "start": "April 2017"
     }
   },
   {

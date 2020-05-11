@@ -16,7 +16,11 @@
           :type="type"
         />
       </div>
-      <div class="detailsContainer" v-if="exp.type !== 'date'" @mouseenter="active = x" @mouseleave="active = -1">
+      <div class="detailsContainer" v-if="exp.type !== 'date'" 
+        @mouseenter="onDetails(x)" 
+        @mouseleave="onDetails()"
+        onclick="void(0)"
+      >
          <div id="detailsHeader" class="rowBare" :class="exp.type">
             <div class="rowBare">
               <p v-if="exp.type === 'work'">{{exp.subTitle}} @ {{exp.title}}</p>
@@ -52,6 +56,9 @@ import Column from "comp/Column.vue"
 import work from "js/work"
 import projects from "js/projects"
 
+const months = ["January","February","March","April","May","June","July",
+                "August","September","October","November","December"]
+
 export default {
   components: { Header, Column },
   data() {
@@ -73,11 +80,11 @@ export default {
       let tags = []
       const len = commits.length
 
-      commits.sort((a, b) => new Date(b.date.start) - new Date(a.date.start))
+      commits.sort((a, b) => this.genDate(b.date.start) - this.genDate(a.date.start))
       for (let i = 0; i < len; i++) {
         let curr = commits.pop()
-        const year = new Date(curr.date.start).getFullYear()
-
+        const year = curr.date.start.split(" ")[1]
+        
         if (!yearsIndex[year]) {
           yearsIndex[year] = true
           commits.unshift(this.date(year))
@@ -87,6 +94,10 @@ export default {
       }
 
       return commits
+    },
+    genDate(monthYear) {
+        let split = monthYear.split(" ")
+        return new Date(split[1], months.indexOf(split[0]), 1)
     },
     date: function(year) {
       return {
@@ -113,6 +124,13 @@ export default {
 
       types[i] = "rectCircle"
       return types
+    },
+    onDetails(x) {
+      if(x > -1 && this.active !== x) {
+        this.active = x
+      } else {
+        this.active = -1
+      }
     }
   },
   mounted: function() {

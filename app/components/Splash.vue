@@ -1,9 +1,7 @@
 <template>
     <div id="splash" class="col">
           <div class="item row" id="splash-header">
-            <img :src="me" id="splash-img" 
-                @mouseover="dev.show=true"
-            />
+            <img :src="me" id="splash-img"/>
           </div>
           <div class="item" id="splash-about">
             <h1 id="splash-about-title">
