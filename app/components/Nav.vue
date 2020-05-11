@@ -5,19 +5,19 @@
             <a href="#splash" class="item">
                 <img id="navLogo" :src="logo" />
             </a>
-            <a href="#experience" class="item navLink">
-                Experience
+            <a href="#experience" class="navLink">
+                <p>Experience</p>
             </a>
             <!-- <a href="#skills" class="item navLink">
                 Skills
             </a> -->
-            <a href="#certs" class="item navLink">
-                Certifications
+            <a href="#certs" class="navLink">
+                <p>Certifications</p>
             </a>
         </div>
         <div id="navRight" class="item row">
-            <a href="./resume.pdf" class="item navLink">
-                Resume
+            <a href="./resume.pdf" class="navLink">
+                <p>Resume</p>
             </a>
         </div>
     </div>
