@@ -1,4 +1,5 @@
-name: Build app
+name: Build
+
 on:
   push:
     branches: [ master, develop ]
