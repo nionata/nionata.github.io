@@ -19,6 +19,7 @@
       <div class="detailsContainer" v-if="exp.type !== 'date'" 
         @mouseenter="onDetails(x)" 
         @mouseleave="onDetails()"
+        onclick="void(0)"
       >
          <div id="detailsHeader" class="rowBare" :class="exp.type">
             <div class="rowBare">
