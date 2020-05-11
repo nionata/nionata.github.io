@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import "styles/Experience.sass"
+import "styles/experience.sass"
 import Header from "comp/Header.vue"
 import Column from "comp/Column.vue"
 import work from "js/work"
