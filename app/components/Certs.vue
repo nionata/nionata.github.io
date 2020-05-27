@@ -1,6 +1,11 @@
 <template>
     <div id="certs" class="col">
         <h2 class="item sectionTitle">Certifications</h2>
+        <div id="fullCertContainer" class="item rowNarrow">
+            <a href="app/images/certs/codepath.PNG">
+                <img src="app/images/certs/codepath.PNG" class="fullCert" />
+            </a>
+        </div>
         <div id="certsContainer" class="item rowNarrow">
             <div class="item cert" v-for="cert in certs" :key="cert.badge">
                 <a :href="'https://www.youracclaim.com/badges/' + cert.badge" target="_blank">
