@@ -50,7 +50,7 @@ export default [
         "link": "http://www.streammonkey.com/"
       },
       {
-        "type": "Say Hello to Nick the Intern",
+        "type": "Say Hello to Nick, the Intern",
         "link": "https://blog.streammonkey.com/say-hello-to-nick-the-intern-11f21970c312"
       }
     ],
