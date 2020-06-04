@@ -5,7 +5,7 @@ export default [
   },
   {
     name: 'streammonkey',
-    link: 'sm.svg'
+    link: 'sm.png'
   },
   {
     name: 'raymondjames',
