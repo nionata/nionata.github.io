@@ -6,9 +6,8 @@ export default [
       "end": "September 2018"
     },
     "description": [
-      "Application for...",
       "Won 1st place and $10,000 from the Next Generation Tech Startup Competition",
-      "Developed the iOS, Android, and web apps with Swift, React Native, React Redux, and Firebase"
+      "Developed the iOS, Android, and Web apps "
     ],
     "tags": ["Swift", "React", "React Native", "Firebase", "JavaScript"],
     "links": [
@@ -25,7 +24,7 @@ export default [
   },
   {
     "title": "Bloom",
-    "tags": ["Node", "PostgreSQL", "Heroku", "CI/CD", "Agile"],
+    "tags": ["Node", "Express", "PostgreSQL", "Heroku", "CI/CD", "TravisCI", "Mocha", "Agile"],
     "links": [
       {
         "type": "Website",
@@ -38,7 +37,9 @@ export default [
     ],
     "image": "images/bloom.svg",
     "description": [
-      "A hub for building and growing sustainable businesses."
+      "Served as scrum master and dev lead for a team of five following an Agile methodology",
+      "Configured a CI/CD DevOps pipeline",
+      "Implemented key API routes and core middleware"
     ],
     "date": {
       "start": "February 2019",
@@ -60,7 +61,7 @@ export default [
     ],
     "image": "images/danger.png",
     "description": [
-      "A video monitoring system powered by deep learning.",
+      "Won 2nd Place and the Best Use of Google Cloud Platform at SwampHacks V by developing a full stack web app to display processed videos and granular metrics",
     ],
     "date": {
       "start": "January 2019"
@@ -81,7 +82,8 @@ export default [
     ],
     "image": "images/spatial.png",
     "description": [
-      "A VR experience and fullstack web app for helping people with spatial hearing disorders."
+      "Won the Home Depot Entrepreneurial Spirit Prize at SwampHacks IV",
+      "Developed a full stack web app to store and display real time game data"
     ],
     "date": {
       "start": "January 2018"
@@ -102,7 +104,7 @@ export default [
     ],
     "image": "https://images.trvl-media.com/media/content/expus/graphics/launch/package1320x742.jpg",
     "description": [
-      "The easiest and most economical way to plan a vacation with a group of distant friends.",
+      "The easiest and most economical way to plan a vacation with a group of distant friends",
     ],
     "date": {
       "start": "September 2017"
@@ -140,7 +142,7 @@ export default [
     ],
     "image": "images/sundial.png",
     "description": [
-      "Find ideal meeting times across multiple time zones.",
+      "Find ideal meeting times across multiple time zones",
     ],
     "date": {
       "start": "January 2017",
@@ -162,7 +164,7 @@ export default [
     ],
     "image": "images/ehs.png",
     "description": [
-      "Displays information about my high school's Engineering Honor Society.",
+      "Displays information about my high school's Engineering Honor Society",
     ],
     "date": {
       "start": "December 2016",
@@ -184,7 +186,7 @@ export default [
     ],
     "image": "images/hackmyidea.png",
     "description": [
-      "Allows people to form teams for projects based on a common idea or complementary skill sets.",
+      "Allows people to form teams for projects based on a common idea or complementary skill sets",
     ],
     "date": {
       "start": "December 2016"
@@ -201,7 +203,7 @@ export default [
     ],
     "image": "images/brightcapsule.png",
     "description": [
-      "A platfrom for kids to build, learn, and explore by participating in monthy hackathons. This was created at a summer program at MIT called Launch.",
+      "A platfrom for kids to build, learn, and explore by participating in monthy hackathons. This was created at a summer program at MIT called Launch",
     ],
     "date": {
       "start": "June 2016",
@@ -210,7 +212,6 @@ export default [
   },
   {
     "title": "EzTutorial",
-    "subTitle": "A Minecraft server plugin that enables server owners to easily create customizable tutorials around their servers to educate players.",
     "tags": ["Java", "CraftBukkit"],
     "links": [
       {
@@ -228,7 +229,7 @@ export default [
     ],
     "image": "https://media-curse.cursecdn.com/attachments/125/410/fbbe58db1c73a0d5291bc97e4dc2f544.jpg",
     "description": [
-      
+      "A Minecraft server plugin that enables server owners to easily create customizable tutorials around their servers to educate players"
     ],
     "date": {
       "start": "March 2014",
