@@ -1,5 +1,9 @@
 export default [
     {
+        badge: '2a2f0b1e-298b-4572-91ff-dae4e3213f99',
+        img: 'aws-ccp.png'
+    },
+    {
         badge: 'cced023d-e1fa-44b5-b218-cdecb8693303',
         img: 'illustrator.png'
     },
