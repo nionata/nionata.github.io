@@ -2,6 +2,14 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import * as archives from '@utils/archives'
 import Dropdown, { Props as DropdownProps } from '@components/Dropdown'
 
+type Props = {
+    version: {
+        current: string,
+        all: DropdownProps['items']
+    },
+    srcPath: string
+}
+
 export const getStaticPaths: GetStaticPaths = async (context) => 
 {
     const versions = await archives.getVersions()
@@ -37,14 +45,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) =>
             srcPath: archives.getSourcePath(current as string)
         }
     }
-}
-
-type Props = {
-    version: {
-        current: string,
-        all: DropdownProps['items']
-    },
-    srcPath: string
 }
 
 const ArchivesVersion = ({ version, srcPath }: Props) =>
