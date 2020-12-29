@@ -1,8 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import * as archives from '@utils/archives'
-import FloatingDropdown, { Props as FloatingDropdownProps } from '@components/FloatingDropdown'
+import Dropdown, { Props as DropdownProps } from '@components/Dropdown'
 
-export const getStaticPaths: GetStaticPaths = async (context) => {
+export const getStaticPaths: GetStaticPaths = async (context) => 
+{
     const versions = await archives.getVersions()
     const paths = versions.map(version => ({
         params: { version }
@@ -14,13 +15,14 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => 
+{
     // Get the current version and all versions
     const { version: current } = params
     const versions = await archives.getVersions()
 
     // Generate options for FloatingDropdown
-    const options = 
+    const all = 
         versions
             .filter(version => version !== current)
             .reverse()
@@ -31,7 +33,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     return {
         props: {
-            version: { current, options },
+            version: { current, all },
             srcPath: archives.getSourcePath(current as string)
         }
     }
@@ -40,20 +42,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 type Props = {
     version: {
         current: string,
-        options: FloatingDropdownProps['options']
+        all: DropdownProps['items']
     },
     srcPath: string
 }
 
-const ArchivesVersion = ({ version, srcPath }) => {
-    console.log(version)
+const ArchivesVersion = ({ version, srcPath }: Props) =>
+{
     return (
         <div>
-            <iframe src={srcPath} className=""></iframe>
-            <FloatingDropdown
-                selected={version.current}
-                options={version.options}
-            />
+            <iframe src={srcPath}></iframe>
+            <div className="absolute top-2 right-1/2 transform translate-x-1/2">
+                <Dropdown
+                    selected={`Viewing ${version.current}`}
+                    items={version.all}
+                />
+            </div>
         </div>
     )
 }
