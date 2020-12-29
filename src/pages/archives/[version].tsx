@@ -52,7 +52,7 @@ const ArchivesVersion = ({ version, srcPath }: Props) =>
     return (
         <div>
             <iframe src={srcPath}></iframe>
-            <div className="absolute top-2 right-1/2 transform translate-x-1/2">
+            <div className="absolute top-1.5 right-1/2 transform translate-x-1/2">
                 <Dropdown
                     selected={`Viewing ${version.current}`}
                     items={version.all}

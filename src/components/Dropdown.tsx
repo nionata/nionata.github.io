@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import useToggle from '@hooks/useToggle'
 import Button from '@components/Button'
 import ListItems, { Props as ListItemsProps } from '@components/ListItems'
 
@@ -10,12 +10,12 @@ export type Props = {
 
 const Dropdown = ({ selected, items, reverse = false }: Props) => 
 {
-    const [open, toggleOpen] = useState(false)
+    const [open, toggleOpen] = useToggle()
 
     // By default, render the button and then the items
     let components = [
-        <Button text={selected} click={() => toggleOpen(!open)} />,
-        <ListItems items={items} show={open} />,
+        <Button text={selected} click={toggleOpen} />,
+        <ListItems items={items} show={open} click={toggleOpen} />
     ]
 
     // If reverse, flip the render order
