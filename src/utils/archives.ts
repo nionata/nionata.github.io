@@ -16,3 +16,7 @@ export const getVersions = async (): Promise<string[]> => {
 export const getSourcePath = (version: string): string => {
     return `/archives/${version}/index.html`
 }
+
+export const getLink = (version: string) => {
+    return `/archives/${version}`
+}
