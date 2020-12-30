@@ -1,9 +1,11 @@
 import fs from 'fs'
 import path from 'path'
+import { Props as ListItemProps } from '@components/ListItem'
 
 const semverRegex = /v\d+.\d+(?:.\d+)?/gi
 
-export const getVersions = (): string[] => {
+export const getVersions = (): string[] => 
+{
     try {
         const archivesDirectory = path.join(process.cwd(), 'public/archives')
         const versions = fs.readdirSync(archivesDirectory)
@@ -15,16 +17,31 @@ export const getVersions = (): string[] => {
     }
 }
 
-export const getSourcePath = (version: string): string => {
+export const getSourcePath = (version: string): string => 
+{
     return `/archives/${version}/index.html`
 }
 
-export const getLink = (version: string) => {
+export const getLink = (version: string) => 
+{
     return `/archives/${version}`
 }
 
-export default {
+export const getItemizedVersions = (): ListItemProps[] => 
+{
+    return getVersions()
+            .reverse()
+            .map(version => ({
+                key: version,
+                name: version,
+                link: getLink(version)
+            }))
+}
+
+export default 
+{
     getLink,
     getSourcePath,
-    getVersions
+    getVersions,
+    getItemizedVersions
 }
