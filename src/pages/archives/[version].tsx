@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import * as archives from '@utils/archives'
+import archives from '@utils/archives'
 import Dropdown, { Props as DropdownProps } from '@components/Dropdown'
 
 type Props = {

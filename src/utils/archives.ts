@@ -20,3 +20,9 @@ export const getSourcePath = (version: string): string => {
 export const getLink = (version: string) => {
     return `/archives/${version}`
 }
+
+export default {
+    getLink,
+    getSourcePath,
+    getVersions
+}
