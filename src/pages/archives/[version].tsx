@@ -12,7 +12,7 @@ type Props = {
 
 export const getStaticPaths: GetStaticPaths = async (context) => 
 {
-    const versions = await archives.getVersions()
+    const versions = archives.getVersions()
     const paths = versions.map(version => ({
         params: { version }
     }))
@@ -23,11 +23,11 @@ export const getStaticPaths: GetStaticPaths = async (context) =>
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => 
+export const getStaticProps: GetStaticProps = async ({ params }): Promise<{ props: Props }>  => 
 {
     // Get the current version and all versions
-    const { version: current } = params
-    const versions = await archives.getVersions()
+    const current = params.version as string
+    const versions = archives.getVersions()
 
     // Generate options for FloatingDropdown
     const all = 
@@ -35,6 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) =>
             .filter(version => version !== current)
             .reverse()
             .map(version => ({
+                key: version,
                 name: version,
                 link: archives.getLink(version)
             }))

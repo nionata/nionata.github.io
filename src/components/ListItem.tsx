@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 export type Props = {
+    key: string,
     name: string,
     link?: string,
 }

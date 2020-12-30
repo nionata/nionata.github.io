@@ -1,10 +1,12 @@
-import fs from 'fs/promises'
+import fs from 'fs'
+import path from 'path'
 
 const semverRegex = /v\d+.\d+(?:.\d+)?/gi
 
-export const getVersions = async (): Promise<string[]> => {
+export const getVersions = (): string[] => {
     try {
-        const versions = await fs.readdir('./public/archives')
+        const archivesDirectory = path.join(process.cwd(), 'public/archives')
+        const versions = fs.readdirSync(archivesDirectory)
 
         // Filter out file names not matching semantic versioning
         return versions.filter(version => version.match(semverRegex))
