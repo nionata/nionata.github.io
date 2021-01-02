@@ -1,12 +1,14 @@
 import ListItem, { Props as ListItemProps } from '@components/ListItem'
 
-export type Props = {
+export type Props = 
+{
     items: Array<ListItemProps>,
     show?: boolean,
     click?(): void
 }
 
-const ListItems = ({ items, show = true, click = null }: Props) => {
+const ListItems = ({ items, show = true, click = null }: Props) => 
+{
     return (
         <div className={`${show ? '' : 'invisible'} my-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
             onClick={click ? () => click() : click}

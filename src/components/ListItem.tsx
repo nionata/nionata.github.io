@@ -6,7 +6,8 @@ export type Props = {
     link?: string,
 }
 
-const ListItem = ({ name, link }: Props) => {
+const ListItem = ({ name, link }: Props) => 
+{
     return (
         <Link href={link}>
             <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">{name}</a>
