@@ -1,5 +1,13 @@
 export default [
   {
+    name: 'anduril',
+    link: 'anduril.png'
+  },
+  {
+    name: 'branch',
+    link: 'branch.png'
+  },
+  {
     name: 'visa',
     link: 'visa.png'
   },
@@ -15,12 +23,12 @@ export default [
     name: 'lockheedmartin',
     link: 'lm.png'
   },
-  {
-    name: 'swamphacks',
-    link: 'sh.png'
-  },
-  {
-    name: 'scanned',
-    link: 'sa.png'
-  }
+  // {
+  //   name: 'swamphacks',
+  //   link: 'sh.png'
+  // },
+  // {
+  //   name: 'scanned',
+  //   link: 'sa.png'
+  // }
 ]
