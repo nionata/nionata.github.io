@@ -27,6 +27,7 @@
                 </h3>
             </div>
           </div>
+          <Contacts />
           <a href="#spotlight">
             <i class="fa fa-chevron-down fa-5x" aria-hidden="true" id="splash-action"/>
           </a>
@@ -36,9 +37,11 @@
 <script>
 import 'styles/splash.sass'
 // import me from '../images/me.png'
+import Contacts from 'comp/Contacts'
 
 export default {
     props: ['dev'],
+    components: { Contacts, },
     data() {
         return {
             me: './app/images/me.png'
