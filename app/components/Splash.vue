@@ -1,7 +1,6 @@
 <template>
     <div id="splash" class="col">
           <div class="item row" id="splash-header">
-            <img :src="me" id="splash-img"/>
           </div>
           <div class="item" id="splash-about">
             <h1 id="splash-about-title">
@@ -9,7 +8,7 @@
             </h1>
             <div id="splash-about-content">
                 <h3>
-                  I study 
+                  I studied 
                   <span class="splash-about-highlight">
                     Computer Science
                   </span> 
@@ -19,11 +18,11 @@
                   </span>
                 </h3>
                 <h3>
-                  In my freetime I
+                  I am a 
                   <span class="splash-about-highlight">
-                    make
-                  </span>
-                  cool things
+                    software engineer
+                  </span> 
+                  at Anduril Industries working on real-time data systems
                 </h3>
             </div>
           </div>
@@ -36,16 +35,10 @@
 
 <script>
 import 'styles/splash.sass'
-// import me from '../images/me.png'
 import Contacts from 'comp/Contacts'
 
 export default {
     props: ['dev'],
     components: { Contacts, },
-    data() {
-        return {
-            me: './app/images/me.png'
-        }
-    }
 }
 </script>

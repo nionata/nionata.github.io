@@ -4,7 +4,7 @@ export default [
     "subTitle": "Software Engineer",
     "date": {
       "start": "January 2020",
-      "end": "Current"
+      "end": "August 2020"
     },
     "description": [
       "Developed actions to create a CI/CD DevOps pipeline",
@@ -20,18 +20,28 @@ export default [
     "image": ""
   },
   {
-    "title": "Independent Contractor",
+    "title": "Stream Monkey",
     "subTitle": "Software Engineer",
     "date": {
       "start": "April 2020",
-      "end": "Current"
+      "end": "December 2020"
     },
     "description": [
-      "Developed a distributed stats ingestion service to replace a client’s legacy system increasing scalability and flexibility while reducing monthly AWS costs by 73%",
-      "Fixed production issues for a client’s web app by refactoring routing and a PDF service"
+      "•	Developed a distributed ingestion service (processes ~2 million requests/hour) to replace a legacy system, reducing monthly AWS costs by 73%",
+      "Rebuilt S3 multipart upload component to enable multi-file uploads and support dynamic destinations",
+      "Integrated YouTube Live Streaming API to automate a manual user workflow",
+      "Wrote browser and integration test suites to support CI efforts "
     ],
-    "tags": ["TypeScript", "CloudFront", "Lambda", "Kinesis", "Elasticsearch", "Node", "Express", "Heroku"],
+    "tags": ["TypeScript", "CloudFront", "Lambda", "Kinesis", "Elasticsearch", "Vue", "PHP", "Dusk", "Codeception"],
     "links": [
+      {
+        "type": "Website",
+        "link": "https://streammonkey.com/"
+      },
+      {
+        "type": "Article",
+        "link": "https://blog.streammonkey.com/how-we-serverlessly-migrated-1-58-billion-elasticsearch-documents-33ad3d0d7c4f"
+      }
     ],
     "image": ""
   },
@@ -141,5 +151,63 @@ export default [
       }
     ],
     "image": "http://aeroengineer.org/wp-content/uploads/2016/11/LOCKHEED.png"
-  }
+  },
+  {
+    "title": "Branch",
+    "subTitle": "Software Engineer",
+    "date": {
+      "start": "January 2021",
+      "end": "March 2021"
+    },
+    "description": [
+      "Developed a secure proxy layer to dynamically connect users to WebSocket servers",
+      "Built out cloud infrastructure on AWS and setup CI/CD"
+    ],
+    "tags": ["Nginx", "Java", "Docker", "Terraform", "ECS", "ELB", "CloudFront", "S3", "Lambda"],
+    "links": [
+      {
+        "type": "Website",
+        "link": "https://branch.gg"
+      }
+    ],
+    "image": "add image?"
+  },
+  {
+    "title": "Anduril",
+    "subTitle": "Software Engineer Intern",
+    "date": {
+      "start": "May 2021",
+      "end": "August 2021"
+    },
+    "description": [
+      "Built an end-to-end load testing tool for a core data ingestion pipeline",
+      "Discovered and addressed ingestion bottlenecks to increase throughput and fault tolerance",
+      "Increased storage observability to support data retention efforts", 
+    ],
+    "tags": ["Go", "gRPC", "Protobuf", "Kubernetes", "CCI", "FoundationDB", "Datadog", "Grafana"],
+    "links": [
+      {
+        "type": "Website",
+        "link": "https://anduril.com"
+      }
+    ],
+  },
+  {
+    "title": "Anduril",
+    "subTitle": "Software Engineer",
+    "date": {
+      "start": "February 2022",
+      "end": "Current"
+    },
+    "description": [
+      "Implemented data retention on a time-series blob store, improving deletion efficiency",
+    ],
+    "tags": ["Go", "Protobuf", "FoundationDB"],
+    "links": [
+      {
+        "type": "Website",
+        "link": "https://anduril.com"
+      }
+    ],
+  },
 ]
