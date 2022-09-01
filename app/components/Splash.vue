@@ -8,21 +8,12 @@
             </h1>
             <div id="splash-about-content">
                 <h3>
-                  I studied 
-                  <span class="splash-about-highlight">
-                    Computer Science
-                  </span> 
-                  at the 
-                  <span class="splash-about-highlight">
-                    University of Florida
-                  </span>
+                  I am a software engineer working on live data systems at
+                  <a href="https://www.anduril.com/">Anduril.</a>
                 </h3>
                 <h3>
-                  I am a 
-                  <span class="splash-about-highlight">
-                    software engineer
-                  </span> 
-                  at Anduril Industries working on real-time data systems
+                  I previously worked on real-time stats at
+                  <a href="https://www.streammonkey.com/">Stream Monkey.</a>
                 </h3>
             </div>
           </div>
