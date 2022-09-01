@@ -8,10 +8,12 @@
             </h1>
             <div id="splash-about-content">
                 <h3>
-                  I am a software engineer working on live data systems at Anduril.
+                  I am a software engineer working on live data systems at
+                  <a href="https://www.anduril.com/">Anduril.</a>
                 </h3>
                 <h3>
-                  I previously worked on live stats at Stream Monkey.
+                  I previously worked on real-time stats at
+                  <a href="https://www.streammonkey.com/">Stream Monkey.</a>
                 </h3>
             </div>
           </div>
